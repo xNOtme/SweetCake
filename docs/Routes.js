@@ -50,6 +50,7 @@ import ValidationPage from "./pages/ValidationPage";
 import NavbarPage from "./pages/NavbarPage";
 import IframePage from "./pages/IframePage";
 import SignIn from "./pages/SignIn";
+import ProductPage from "./pages/ProductPage";
 
 class Routes extends React.Component {
   render() {
@@ -65,6 +66,7 @@ class Routes extends React.Component {
         <Route exact path="/modals" component={ModalsNavPage} />
         <Route exact path="/addons" component={AddonsNavPage} />
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/productpage" component={ProductPage} />
 
         {/* FREE */}
         <Route path="/css/animations" component={AnimationPage} />

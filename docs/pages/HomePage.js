@@ -18,7 +18,7 @@ import {
   CardGroup,
   CardImage,
   CardTitle,
-  CardText 
+  CardText
 
 } from "mdbreact";
 import DocsLink from "./DocsLink";
@@ -111,7 +111,34 @@ class HomePage extends React.Component {
               <CardGroup deck className="mt-3">
                 <Card>
                   <CardImage
-                    src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                    src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="white-slight"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Panel title</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    {/* <Button href="/productpage" color="primary" size="md" >
+                      READ MORE
+                    </Button>                     */}
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+
+                <Card>
+                  <CardImage
+                    src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
                     alt="Card image cap"
                     top
                     hover
@@ -123,7 +150,7 @@ class HomePage extends React.Component {
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                 </CardText>
-                    <Button color="primary" size="md">
+                    <Button href="#" color="light-blue" size="md">
                       Add to card
                 </Button>
                   </CardBody>
@@ -131,27 +158,7 @@ class HomePage extends React.Component {
 
                 <Card>
                   <CardImage
-                    src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg"
-                    alt="Card image cap"
-                    top
-                    hover
-                    overlay="white-slight"
-                  />
-                  <CardBody>
-                    <CardTitle tag="h5">Panel title</CardTitle>
-                    <CardText>
-                      Some quick example text to build on the card title and make up
-                      the bulk of the card's content.
-                </CardText>
-                    <Button color="light-blue" size="md">
-                      Add to card
-                </Button>
-                  </CardBody>
-                </Card>
-
-                <Card>
-                  <CardImage
-                    src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg"
+                    src="https://i0.wp.com/media.hungryforever.com/wp-content/uploads/2017/12/06104523/magic-cake-recipe.jpg?ssl=1?w=356&strip=all&quality=80"
                     alt="Card image cap"
                     top
                     hover
@@ -163,7 +170,7 @@ class HomePage extends React.Component {
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                 </CardText>
-                    <Button color="primary" size="md">
+                    <Button href="#" color="primary" size="md">
                       Add to card
                 </Button>
                   </CardBody>
@@ -191,6 +198,7 @@ class HomePage extends React.Component {
                     </NavLink>
                   </Col>
                 </Col>
+
                 <Col md="4" className="mb-5">
                   <Col size="2" md="2" className="float-left">
                     <Fa icon="cubes" className="blue-text" size="2x" />
