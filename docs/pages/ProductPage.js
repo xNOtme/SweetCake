@@ -3,16 +3,10 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBInput,
-  MDBBtn,
-  MDBIcon,
-  MDBCard,
-  MDBCardBody,
-  MDBModal,
-  MDBModalBody,
-  MDBModalFooter
+  MDBInputSelect,
 } from "mdbreact";
 import DocsLink from "./DocsLink";
+const NavLink = require("react-router-dom").NavLink;
 
 class ProductPage extends React.Component {
   constructor(props) {
@@ -29,38 +23,72 @@ class ProductPage extends React.Component {
     });
   }
 
+  handleChange = value => {
+    console.log(value);
+  };
+
   render() {
     return (
       <MDBContainer className="mt-5">        
         <MDBRow>
           <MDBCol md="6">
-            <form>
-              <p className="h4 text-center mb-4">Sign in</p>
-              <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-                Your email
-              </label>
-              <input
-                type="email"
-                id="defaultFormLoginEmailEx"
-                className="form-control"
-              />
-              <br />
-              <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-                Your password
-              </label>
-              <input
-                type="password"
-                id="defaultFormLoginPasswordEx"
-                className="form-control"
-              />
-              <div className="text-center mt-4">
-                <button className="btn btn-indigo" type="submit">
-                  Login
-                </button>
+            <p className="h4 text-left mb-4">Photo Cake</p>
+            <img src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-fluid" alt="Responsive image"></img>
+          </MDBCol>
+          <MDBCol md="1" />
+          <MDBCol md="5">
+            <p className="h4 text-left mb-4">BELGIUM CHOCOLATE PHOTO CAKE</p>
+            <p className="h6 text-left mb-6">Price</p>
+            <p className="h6 text-left text-warning mb-6">₹910.00</p>
+            <p className="h6 text-left mb-6">Order this delicious Fresh Chocolate Photo Cake for someone special on any special occasion</p>
+            <p className="h6 text-left mb-6">- Midnight home delivery available on same day</p>
+            <p className="h6 text-left mb-6">- No extra charges</p>
+            <p className="h6 text-left mb-6">- Guarantee to melt your heart with it's taste.</p>
+
+            <form className="was-validated" noValidate>
+              <h4 className="mt-6">Size</h4>
+              <div className="form-group">
+                <select className="custom-select browser-default" required>
+                  <option value="">Select</option>
+                  <option value="1">Small</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Large</option>
+                </select>
+                <div className="invalid-feedback">
+                  Select Size to add to Cart
+                </div>
               </div>
             </form>
+            <form>
+              <h4 className="mt-4">Qty</h4>
+              <MDBRow>
+                <MDBCol sm="4">
+                  <MDBInputSelect
+                    getValue={this.handleChange}
+                    min={1}
+                    max={99}
+                    value={1}
+                    className="mb-2"
+                  />
+                </MDBCol>
+              </MDBRow>
+              <NavLink
+                tag="button"
+                className="btn btn-warning"
+                to="#"
+              >
+                Add To Cart
+                </NavLink>
+              
+              <button type="button" class="btn btn-light">Add To Wish List</button>
+            </form>
           </MDBCol>
-        </MDBRow>        
+        </MDBRow>
+
+        <MDBRow>
+          <MDBCol md="6">
+          </MDBCol>
+        </MDBRow>
       </MDBContainer>
     );
   }

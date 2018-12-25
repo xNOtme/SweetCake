@@ -110,6 +110,7 @@ class Routes extends React.Component {
         <Route path="/tables/datatable-api" component={DatatableApiPage} />
         <Route path="/addons/iframe" component={IframePage} />
         <Route path="/advanced/alerts" component={AlertPage} />
+        <Route path="/productpage" component={ProductPage} />
         <Route
           render={function() {
             return <h1>Not Found</h1>;

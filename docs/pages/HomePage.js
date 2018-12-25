@@ -42,7 +42,7 @@ class HomePage extends React.Component {
                 <View>
                   <img
                     className="d-block"
-                    src="https://www.sweetcake.co/media/wysiwyg/anniversary-banner_1.jpg"
+                    src="https://www.sweetcake.co/media/wysiwyg/new-year_1.jpg"
                     alt="First slide"
                   />
                 </View>
@@ -55,7 +55,7 @@ class HomePage extends React.Component {
                 <View>
                   <img
                     className="d-block"
-                    src="https://www.sweetcake.co/media/wysiwyg/new-year_1.jpg"
+                    src="https://www.sweetcake.co/media/wysiwyg/anniversary-banner_1.jpg"
                     alt="Second slide"
                   />
                 </View>
@@ -106,6 +106,7 @@ class HomePage extends React.Component {
               <p className="text-center">
                 Custamize Cake Designer Cake back in 2014. We Provide Online Cake And Flower Delivery in Delhi/NCR
               </p>
+
               <hr className="my-5" />
 
               <CardGroup deck className="mt-3">
@@ -118,7 +119,81 @@ class HomePage extends React.Component {
                     overlay="white-slight"
                   />
                   <CardBody>
-                    <CardTitle tag="h5">Panel title</CardTitle>
+                    <CardTitle tag="h5">Chocolate Photo Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+
+                <Card>
+                  <CardImage
+                    src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="white-slight"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Fresh Fruit Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+
+                <Card>
+                  <CardImage
+                    src="https://i0.wp.com/media.hungryforever.com/wp-content/uploads/2017/12/06104523/magic-cake-recipe.jpg?ssl=1?w=356&strip=all&quality=80"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="primary"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Kitkat Jems Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+              </CardGroup>
+
+              <CardGroup deck className="mt-3">
+                <Card>
+                  <CardImage
+                    src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="white-slight"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Basket Flower Cake</CardTitle>
                     <CardText>
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
@@ -145,14 +220,18 @@ class HomePage extends React.Component {
                     overlay="white-slight"
                   />
                   <CardBody>
-                    <CardTitle tag="h5">Panel title</CardTitle>
+                    <CardTitle tag="h5">Cricket Pitch Cake</CardTitle>
                     <CardText>
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
-                </CardText>
-                    <Button href="#" color="light-blue" size="md">
-                      Add to card
-                </Button>
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
                   </CardBody>
                 </Card>
 
@@ -165,138 +244,100 @@ class HomePage extends React.Component {
                     overlay="primary"
                   />
                   <CardBody>
-                    <CardTitle tag="h5">Panel title</CardTitle>
+                    <CardTitle tag="h5">Chocolate Rose Cake</CardTitle>
                     <CardText>
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
-                </CardText>
-                    <Button href="#" color="primary" size="md">
-                      Add to card
-                </Button>
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+              </CardGroup>
+
+              <hr className="my-5"></hr>
+              <h2 className="text-center my-4 font-weight-bold">Best Selling Products</h2>
+              
+              <CardGroup deck className="mt-3">
+                <Card>
+                  <CardImage
+                    src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="white-slight"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Chocolate Photo Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+
+                <Card>
+                  <CardImage
+                    src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="white-slight"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Fresh Fruit Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
+                  </CardBody>
+                </Card>
+
+                <Card>
+                  <CardImage
+                    src="https://i0.wp.com/media.hungryforever.com/wp-content/uploads/2017/12/06104523/magic-cake-recipe.jpg?ssl=1?w=356&strip=all&quality=80"
+                    alt="Card image cap"
+                    top
+                    hover
+                    overlay="primary"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Kitkat Jems Cake</CardTitle>
+                    <CardText>
+                      Some quick example text to build on the card title and make up
+                      the bulk of the card's content.
+                    </CardText>
+                    <NavLink
+                      tag="button"
+                      className="btn btn-sm btn-primary"
+                      to="/productpage"
+                    >
+                      READ MORE
+                    </NavLink>
                   </CardBody>
                 </Card>
               </CardGroup>
 
               <hr className="my-5" />
-              <Row id="categories">
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="css3" className="pink-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">CSS</h4>
-                    <p className="grey-text">
-                      Animations, colours, shadows, skins and many more! Get to
-                      know all our css styles in one place.
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo darken-3"
-                      to="/css"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="cubes" className="blue-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">COMPONENTS</h4>
-                    <p className="grey-text">
-                      Ready-to-use components that you can use in your
-                      applications. Both basic and extended versions!
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo lighten-2"
-                      to="/components"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="code" className="green-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">ADVANCED</h4>
-                    <p className="grey-text">
-                      Advanced components such as charts, carousels, tooltips
-                      and popovers. All in Material Design version.
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo darken-3"
-                      to="/advanced"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-              </Row>
-              <Row id="categories">
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="bars" className="pink-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">NAVIGATION</h4>
-                    <p className="grey-text">
-                      Ready-to-use navigation layouts, navbars, breadcrumbs and
-                      much more! Learn more about our navigation components.
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo darken-3"
-                      to="/navigation"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="edit" className="blue-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">FORMS</h4>
-                    <p className="grey-text">
-                      Inputs, autocomplete, selecst, date and time pickers.
-                      Everything in one place is ready to use!
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo lighten-2"
-                      to="/forms"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-                <Col md="4" className="mb-5">
-                  <Col size="2" md="2" className="float-left">
-                    <Fa icon="table" className="green-text" size="2x" />
-                  </Col>
-                  <Col size="10" md="8" lg="10" className="float-right">
-                    <h4 className="font-weight-bold">TABLES</h4>
-                    <p className="grey-text">
-                      Basic and advanced tables. Responsive, datatables, with
-                      sorting, searching and export to csv.
-                    </p>
-                    <NavLink
-                      tag="button"
-                      className="btn btn-sm indigo darken-3"
-                      to="/tables"
-                    >
-                      Learn more
-                    </NavLink>
-                  </Col>
-                </Col>
-              </Row>
               <Row id="categories">
                 <Col md="4" className="mb-5">
                   <Col size="2" md="2" className="float-left">
