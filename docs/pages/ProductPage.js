@@ -4,6 +4,15 @@ import {
   MDBRow,
   MDBCol,
   MDBInputSelect,
+  Button,
+  Modal,
+  ModalBody,
+  Card,
+  CardBody,
+  CardGroup,
+  CardImage,
+  CardTitle, Collapse,
+  CardText, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBListGroup, MDBListGroupItem, MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron
 } from "mdbreact";
 import DocsLink from "./DocsLink";
 const NavLink = require("react-router-dom").NavLink;
@@ -11,15 +20,24 @@ const NavLink = require("react-router-dom").NavLink;
 class ProductPage extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleCollapse = this.toggleCollapse.bind(this);
     this.state = {
+      collapseID: "",
       modal: false
     };
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  toggleCollapse(collapseID) {
+    this.setState(prevState => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+    }));
+  }
+
+  toggle(nr) {
+    let modalNumber = "modal" + nr;
     this.setState({
-      modal: !this.state.modal
+      [modalNumber]: !this.state[modalNumber]
     });
   }
 
@@ -29,7 +47,7 @@ class ProductPage extends React.Component {
 
   render() {
     return (
-      <MDBContainer className="mt-5">        
+      <MDBContainer className="mt-5">
         <MDBRow>
           <MDBCol md="6">
             <p className="h4 text-left mb-4">Photo Cake</p>
@@ -72,22 +90,49 @@ class ProductPage extends React.Component {
                   />
                 </MDBCol>
               </MDBRow>
-              <NavLink
+              {/* <NavLink
                 tag="button"
                 className="btn btn-warning"
-                to="#"
+                to="/cartpage"
               >
                 Add To Cart
-                </NavLink>
-              
+                </NavLink> */}
+              <Button color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Add To Cart</Button>
               <button type="button" class="btn btn-light">Add To Wish List</button>
             </form>
           </MDBCol>
-        </MDBRow>
+          <MDBRow>
+            <Collapse id="basicCollapse" isOpen={this.state.collapseID}>
+              <MDBCard className="text-center">
+                <MDBCardHeader>
+                  <MDBNav header>
+                    <MDBNavItem>
+                      <MDBNavLink active to="#">
+                        Shopping cart
+                      </MDBNavLink>
+                    </MDBNavItem>
+                  </MDBNav>
+                </MDBCardHeader>
 
-        <MDBRow>
-          <MDBCol md="6">
-          </MDBCol>
+                <MDBCardBody>
+                  <MDBRow>
+                    <MDBCol md="3">
+                      <MDBCardTitle tag="h5">Chocolate Photo Cake</MDBCardTitle>
+                      <CardImage
+                        src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                        alt="Card image cap" top hover overlay="white-slight" />
+                    </MDBCol>
+                    <MDBCol md="4">
+                      <p className="h6 text-left mb-6">Quantity:</p>
+                      <p className="h6 text-left mb-6">Price:</p>
+                      <p className="h6 text-left text-warning mb-6">Total:</p>
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCardBody>
+
+              </MDBCard>
+            </Collapse>
+          </MDBRow>
         </MDBRow>
       </MDBContainer>
     );
