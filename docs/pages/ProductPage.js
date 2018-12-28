@@ -23,7 +23,13 @@ class ProductPage extends React.Component {
     this.toggleCollapse = this.toggleCollapse.bind(this);
     this.state = {
       collapseID: "",
-      modal: false
+      modal: false,
+      products: [
+        { title: 'Apple', count: 0, price: 910 },
+        { title: 'IBM', count: 0, price: 200 },
+        { title: 'HP', count: 0, price: 300 },
+      ],
+      tong = 0
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -44,6 +50,23 @@ class ProductPage extends React.Component {
   handleChange = value => {
     console.log(value);
   };
+
+  // tong = value => {
+  //   this.setTong({
+
+  //   })
+
+  // };
+
+  onChange = (index, val) => {
+    this.setState({
+      products: this.state.products.map((product, i) => (
+        i === index ? { ...product, count: val } : product
+      ))
+    })
+  }
+
+  
 
   render() {
     return (
@@ -90,13 +113,6 @@ class ProductPage extends React.Component {
                   />
                 </MDBCol>
               </MDBRow>
-              {/* <NavLink
-                tag="button"
-                className="btn btn-warning"
-                to="/cartpage"
-              >
-                Add To Cart
-                </NavLink> */}
               <Button color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Add To Cart</Button>
               <button type="button" class="btn btn-light">Add To Wish List</button>
             </form>
@@ -122,10 +138,23 @@ class ProductPage extends React.Component {
                         src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
                         alt="Card image cap" top hover overlay="white-slight" />
                     </MDBCol>
-                    <MDBCol md="4">
+                    <MDBCol md="3">
                       <p className="h6 text-left mb-6">Quantity:</p>
                       <p className="h6 text-left mb-6">Price:</p>
                       <p className="h6 text-left text-warning mb-6">Total:</p>
+                    </MDBCol>
+                    <MDBCol md="3">
+                      <MDBInputSelect
+                        getValue={this.handleChange}
+                        min={1}
+                        max={99}
+                        value={1}
+                        className="mb-2"
+                      />
+                      {/* <Tong getValue={this.handleChange}  /> */}
+
+                      <ProductList products={this.state.products} onChange={this.onChange} />
+                      <Total products={this.state.products} />
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>
@@ -138,5 +167,38 @@ class ProductPage extends React.Component {
     );
   }
 }
+
+const ProductList = ({ products, onChange }) => (
+  <ul>
+    {products.map((product, i) => (
+      <li key={i}>
+        {product.title}
+        <input
+          type="text"
+          value={product.count}
+          onChange={e => onChange(i, parseInt(e.target.value) || 0)}
+        />
+      </li>
+    ))}
+  </ul>
+);
+
+const Total = ({ products }) => (
+  <h4>
+    Price:
+    {products.reduce((sum, i) => (
+      sum += i.count * i.price
+    ), 0)}
+  </h4>
+)
+
+const Tong = ({getValue}) => (
+  <h4>
+    Price:
+    {getValue.reduce((sum,i) => (
+      sum += i.value
+    ), 0)}
+  </h4>
+)
 
 export default ProductPage;
