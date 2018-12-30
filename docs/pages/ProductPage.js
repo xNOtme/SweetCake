@@ -58,7 +58,7 @@ class ProductPage extends React.Component {
     })
   }
 
-  
+
 
   render() {
     return (
@@ -130,21 +130,45 @@ class ProductPage extends React.Component {
                         src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
                         alt="Card image cap" top hover overlay="white-slight" />
                     </MDBCol>
-                    <MDBCol md="3">
-                      <p className="h6 text-left mb-6">Quantity:</p>
-                      <p className="h6 text-left mb-6">Price:</p>
-                      <p className="h6 text-left text-warning mb-6">Total:</p>
+                    <MDBCol md="1"></MDBCol>
+                    <MDBCol md="4" className="mx-auto ml-4 mt-4">
+                      <MDBRow className="mt-4">
+                        <MDBCol md="6">
+                          <p className="h6 text-left mt-2">Quantity:</p>
+                        </MDBCol>
+                        <MDBCol md="6">
+                          <MDBInputSelect
+                            getValue={this.handleChange}
+                            min={1}
+                            max={99}
+                            value={1}
+                          />
+                        </MDBCol>
+                      </MDBRow>
+                      <MDBRow>
+                        <MDBCol md="6">                        
+                          <p className="h6 text-left mt-4">Price:</p>
+                        </MDBCol>
+                        <MDBCol md="6">
+                          <p className="h6 text-left mt-4">₹910.00</p>                          
+                        </MDBCol>
+                      </MDBRow>
+                      <MDBRow>
+                        <MDBCol md="6">                            
+                          <p className="h6 text-left text-warning mt-4">Total:</p>
+                        </MDBCol>
+                        <MDBCol md="6">
+                          <p className="h6 text-left text-warning mt-4">₹910.00</p>                          
+                        </MDBCol>
+                      </MDBRow>
                     </MDBCol>
-                    <MDBCol md="3">
-                      <MDBInputSelect
-                        getValue={this.handleChange}
-                        min={1}
-                        max={99}
-                        value={1}
-                        className="mb-2"
-                      />
-                      <ProductList products={this.state.products} onChange={this.onChange} />
-                      <Total products={this.state.products} />
+                    <MDBCol md="4" className="mx-auto mt-4">
+                      <Button className="mt-3" color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Remove</Button>
+
+                      {/* <Tong getValue={this.handleChange}  /> */}
+
+                      {/* <ProductList products={this.state.products} onChange={this.onChange} />
+                      <Total products={this.state.products} /> */}
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>
@@ -182,10 +206,10 @@ const Total = ({ products }) => (
   </h4>
 )
 
-const Tong = ({getValue}) => (
+const Tong = ({ getValue }) => (
   <h4>
     Price:
-    {getValue.reduce((sum,i) => (
+    {getValue.reduce((sum, i) => (
       sum += i.value
     ), 0)}
   </h4>
