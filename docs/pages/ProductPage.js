@@ -29,7 +29,6 @@ class ProductPage extends React.Component {
         { title: 'IBM', count: 0, price: 200 },
         { title: 'HP', count: 0, price: 300 },
       ],
-      tong = 0
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -50,13 +49,6 @@ class ProductPage extends React.Component {
   handleChange = value => {
     console.log(value);
   };
-
-  // tong = value => {
-  //   this.setTong({
-
-  //   })
-
-  // };
 
   onChange = (index, val) => {
     this.setState({
@@ -151,8 +143,6 @@ class ProductPage extends React.Component {
                         value={1}
                         className="mb-2"
                       />
-                      {/* <Tong getValue={this.handleChange}  /> */}
-
                       <ProductList products={this.state.products} onChange={this.onChange} />
                       <Total products={this.state.products} />
                     </MDBCol>
