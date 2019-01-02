@@ -93,7 +93,7 @@ class ProductPage extends React.Component {
               </div>
             </form>
             <form>
-              <h4 className="mt-4">Qty</h4>
+              <h4 className="mt-4">Quantity</h4>
               <MDBRow>
                 <MDBCol sm="4">
                   <MDBInputSelect
@@ -134,15 +134,10 @@ class ProductPage extends React.Component {
                     <MDBCol md="4" className="mx-auto ml-4 mt-4">
                       <MDBRow className="mt-4">
                         <MDBCol md="6">
-                          <p className="h6 text-left mt-2">Quantity:</p>
+                          <p className="h6 text-left mt-4">Quantity:</p>
                         </MDBCol>
                         <MDBCol md="6">
-                          <MDBInputSelect
-                            getValue={this.handleChange}
-                            min={1}
-                            max={99}
-                            value={1}
-                          />
+                          <p className="h6 text-left mt-4">1</p>  
                         </MDBCol>
                       </MDBRow>
                       <MDBRow>
@@ -163,12 +158,7 @@ class ProductPage extends React.Component {
                       </MDBRow>
                     </MDBCol>
                     <MDBCol md="4" className="mx-auto mt-4">
-                      <Button className="mt-3" color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Remove</Button>
-
-                      {/* <Tong getValue={this.handleChange}  /> */}
-
-                      {/* <ProductList products={this.state.products} onChange={this.onChange} />
-                      <Total products={this.state.products} /> */}
+                      <Button className="mt-3 btn-sm" color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Remove</Button>
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>
