@@ -1,18 +1,11 @@
 import React from "react";
 import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInputSelect,
-  Button,
-  Modal,
-  ModalBody,
-  Card,
-  CardBody,
-  CardGroup,
-  CardImage,
-  CardTitle, Collapse,
-  CardText, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBListGroup, MDBListGroupItem, MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron
+  MDBContainer, MDBRow, MDBCol, MDBInputSelect, Button,
+  Modal, ModalBody, ModalFooter, ModalHeader,
+  Card, CardBody, CardGroup, CardImage, CardTitle,
+  Collapse, Col, Row,
+  CardText, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBListGroup, MDBListGroupItem,
+  MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron
 } from "mdbreact";
 import DocsLink from "./DocsLink";
 const NavLink = require("react-router-dom").NavLink;
@@ -24,6 +17,7 @@ class ProductPage extends React.Component {
     this.state = {
       collapseID: "",
       modal: false,
+      modal8: false,
       products: [
         { title: 'Apple', count: 0, price: 910 },
         { title: 'IBM', count: 0, price: 200 },
@@ -58,8 +52,6 @@ class ProductPage extends React.Component {
     })
   }
 
-
-
   render() {
     return (
       <MDBContainer className="mt-5">
@@ -72,7 +64,7 @@ class ProductPage extends React.Component {
           <MDBCol md="5">
             <p className="h4 text-left mb-4">BELGIUM CHOCOLATE PHOTO CAKE</p>
             <p className="h6 text-left mb-6">Price</p>
-            <p className="h6 text-left text-warning mb-6">₹910.00</p>
+            <p className="h6 text-left text-warning mb-6">$1599.00</p>
             <p className="h6 text-left mb-6">Order this delicious Fresh Chocolate Photo Cake for someone special on any special occasion</p>
             <p className="h6 text-left mb-6">- Midnight home delivery available on same day</p>
             <p className="h6 text-left mb-6">- No extra charges</p>
@@ -106,9 +98,57 @@ class ProductPage extends React.Component {
                 </MDBCol>
               </MDBRow>
               <Button color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Add To Cart</Button>
-              <button type="button" class="btn btn-light">Add To Wish List</button>
+              <button type="button" onClick={() => this.toggle(8)} class="btn btn-light" >Add To Wish List</button>
             </form>
           </MDBCol>
+
+          <MDBRow>
+            <Modal
+              isOpen={this.state.modal8}
+              toggle={() => this.toggle(8)}
+              fullHeight
+              position="right"
+            >
+              <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
+              <ModalBody>
+                <MDBRow>
+                  <CardGroup className="ml-2 mr-2">
+                    <Card>
+                      <CardBody>
+                        <MDBRow>
+                          <MDBCol xs="4">
+                            <CardImage
+                              src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              alt="Card image cap" top hover overlay="white-slight" />
+                          </MDBCol>
+                          <MDBCol xs="7">
+                            <CardText small muted >
+                            <strong>Chocolate Title</strong><br/>
+                            Order this delicious Fresh Chocolate
+                            <Row>
+                              <Col xs="5"><p>$1599.00</p></Col>
+                              <Col xs="7"><p>1 × $1599.00</p></Col>
+                            </Row>
+                            </CardText>
+                          </MDBCol>
+                          <MDBCol className="font-weight-bold red-text" xs="1">
+                            X
+                          </MDBCol>
+                        </MDBRow>
+                      </CardBody>
+                    </Card>
+                  </CardGroup>
+                </MDBRow>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="secondary" onClick={() => this.toggle(8)}>
+                  Close
+            </Button>
+                <Button color="primary">CHECKOUT</Button>
+              </ModalFooter>
+            </Modal>
+          </MDBRow>
+
           <MDBRow>
             <Collapse id="basicCollapse" isOpen={this.state.collapseID}>
               <MDBCard className="text-center">
@@ -137,23 +177,23 @@ class ProductPage extends React.Component {
                           <p className="h6 text-left mt-4">Quantity:</p>
                         </MDBCol>
                         <MDBCol md="6">
-                          <p className="h6 text-left mt-4">1</p>  
+                          <p className="h6 text-left mt-4">1</p>
                         </MDBCol>
                       </MDBRow>
                       <MDBRow>
-                        <MDBCol md="6">                        
+                        <MDBCol md="6">
                           <p className="h6 text-left mt-4">Price:</p>
                         </MDBCol>
                         <MDBCol md="6">
-                          <p className="h6 text-left mt-4">₹910.00</p>                          
+                          <p className="h6 text-left mt-4">₹910.00</p>
                         </MDBCol>
                       </MDBRow>
                       <MDBRow>
-                        <MDBCol md="6">                            
+                        <MDBCol md="6">
                           <p className="h6 text-left text-warning mt-4">Total:</p>
                         </MDBCol>
                         <MDBCol md="6">
-                          <p className="h6 text-left text-warning mt-4">₹910.00</p>                          
+                          <p className="h6 text-left text-warning mt-4">₹910.00</p>
                         </MDBCol>
                       </MDBRow>
                     </MDBCol>

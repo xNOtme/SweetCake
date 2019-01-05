@@ -118,7 +118,7 @@ class HomePage extends React.Component {
         </div>
 
         <div className="ml-4 mr-4">
-          <CardGroup deck className="mt-3">
+          <CardGroup sm="4" xs="6" deck className="mt-3">
             <Card>
               <NavLink
                 onClick={this.closeCollapse("mainNavbarCollapse")}
@@ -809,7 +809,43 @@ class HomePage extends React.Component {
                   </NavLink>
                 </Card>
 
-              </CardGroup>           
+              </CardGroup>       
+
+              
+              <hr className="my-5" />
+              <h2 className="text-center my-4 ">Surprises for</h2>    
+
+              <CardGroup deck className="mt-3" >
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://media.floweraura.com/sites/default/files/alloccasion/product_category/same-day-delivery.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://media.floweraura.com/sites/default/files/alloccasion/product_category/Mid-night-delivery.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />                    
+                  </NavLink>
+                </Card>
+              </CardGroup> 
 
               <hr className="my-5" />
               <h2 className="text-center my-4 ">Customer Review</h2>
@@ -831,10 +867,10 @@ class HomePage extends React.Component {
                         <p>On December 22, 2018 from hisar</p>
                       </CardText>
                       <Row>
-                        <Col md="2">
+                        <Col md="1" sm="1" xs="1">
                           <h3><i class="fa fa-thumbs-up light-blue-text" aria-hidden="true"></i></h3>
                         </Col>
-                        <Col md="10">
+                        <Col md="10" sm="10" xs="10">
                           <p className="mt-1">Recommends</p>
                         </Col>
                       </Row>
@@ -857,10 +893,10 @@ class HomePage extends React.Component {
                         On December 13, 2018 from Dubai
                       </CardText>
                       <Row>
-                        <Col md="2">
+                        <Col md="1" sm="1" xs="1">
                           <h3><i class="fa fa-thumbs-up light-blue-text" aria-hidden="true"></i></h3>
                         </Col>
-                        <Col md="10">
+                        <Col md="10" sm="10" xs="10">
                           <p className="mt-1">Recommends</p>
                         </Col>
                       </Row>
@@ -883,10 +919,10 @@ class HomePage extends React.Component {
                         On December 13, 2018 from Japan
                       </CardText>
                       <Row>
-                        <Col md="2">
+                        <Col md="1" sm="1" xs="1">
                           <h3><i class="fa fa-thumbs-up light-blue-text" aria-hidden="true"></i></h3>
                         </Col>
-                        <Col md="10">
+                        <Col md="10" sm="10" xs="10">
                           <p className="mt-1">Recommends</p>
                         </Col>
                       </Row>
