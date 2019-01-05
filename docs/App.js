@@ -58,6 +58,7 @@ class App extends Component {
               </Col>
             </Row>
           </Container>
+
           <Navbar
             color="grey lighten-5"
             light
@@ -65,7 +66,6 @@ class App extends Component {
             style={{ marginTop: "0px"}}
             fixed="top"
             scrolling
-            className="text-center text-secondary"
           >
             <NavbarBrand href="/">
               <img
@@ -95,7 +95,7 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline ">FLOWER                        
+                        <div>FLOWER                        
                           <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
                         </div>
                       </DropdownToggle>
@@ -110,8 +110,9 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline">CAKES</div>                      
+                        <div>CAKES                    
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>  
                   </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href="#!">Action</DropdownItem>
@@ -124,8 +125,9 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline">GIFTS</div>                      
+                        <div >GIFTS                   
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>   
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href="#!">Action</DropdownItem>
@@ -138,8 +140,9 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline">ANNIVERSARY</div>                      
+                        <div >ANNIVERSARY                
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>      
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href="#!">Action</DropdownItem>
@@ -152,8 +155,9 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline">PLANTS</div>                      
+                        <div >PLANTS                 
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>     
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href="#!">Action</DropdownItem>
@@ -166,8 +170,9 @@ class App extends Component {
                 <NavItem>
                     <Dropdown>
                       <DropdownToggle nav>
-                        <div className="d-none d-md-inline">BIRTHDAY</div>                      
+                        <div >BIRTHDAY   
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>                   
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem href="#!">Action</DropdownItem>
