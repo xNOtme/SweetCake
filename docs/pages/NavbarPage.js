@@ -70,7 +70,7 @@ class NavbarPage extends React.Component {
             </Navbar>
             <Navbar
               color="default-color"
-              style={{ marginTop: "20px" }}
+              style={{ marginTop: "-10px" }}
               dark
               expand="md"
               scrolling

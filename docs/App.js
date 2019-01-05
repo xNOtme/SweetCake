@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import {
-  Navbar,
-  NavbarBrand,
-  NavbarNav,
-  NavbarToggler,
-  Collapse,
-  NavItem,
-  Footer,
-  NavLink
+  Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink,
+  Collapse, Footer, MDBInput, MDBBtn, MDBIcon, MDBModal, MDBModalBody, MDBModalFooter,
+  Container, Col, Row, FormInline,
+  Dropdown, DropdownToggle, DropdownMenu,  DropdownItem, 
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
@@ -18,8 +14,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapseID: ""
+      collapseID: "",
+      modal: false
     };
+    this.toggle = this.toggle.bind(this);
   }
 
   toggleCollapse = collapseID => () =>
@@ -30,6 +28,11 @@ class App extends Component {
   closeCollapse = collapseID => () =>
     this.state.collapseID === collapseID && this.setState({ collapseID: "" });
 
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
   render() {
     const overlay = (
       <div
@@ -41,14 +44,36 @@ class App extends Component {
     return (
       <Router>
         <div className="flyout">
-          <Navbar color="indigo" dark expand="md" fixed="top" scrolling>
+          <Container>
+            <Row>
+              <Col>
+                <NavbarBrand href="/">
+                  <img
+                    src="data:image/png;base64,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"
+                    alt=""
+                    height="60"
+                  />{" "}
+                  <strong className="black-text">Sweet Cake</strong>
+                </NavbarBrand>
+              </Col>
+            </Row>
+          </Container>
+          <Navbar
+            color="grey lighten-5"
+            light
+            expand="md"
+            style={{ marginTop: "0px"}}
+            fixed="top"
+            scrolling
+            className="text-center text-secondary"
+          >
             <NavbarBrand href="/">
               <img
-                src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMyAyMC40NjM0OCI+PHRpdGxlPmxvZ288L3RpdGxlPjxwYXRoIGQ9Ik0xOC45MTA3LDYuNjMyNTdoMHEtLjM2NzIxLS4xMjYtLjc0MDQyLS4yMzMzLjA2MTg3LS4yNTE0MS4xMTQ0MS0uNTA1Yy41NjA0NS0yLjcyMDY0LjE5NC00LjkxMjM3LTEuMDU3MzktNS42MzM4Ni0xLjE5OTgtLjY5Mi0zLjE2MjEuMDI5NTItNS4xNDM5NCwxLjc1NDE0cS0uMjkyOTMuMjU1NS0uNTcyNjcuNTI1NTQtLjE4NzI3LS4xNzk1MS0uMzgxMS0uMzUyQzkuMDUyNTcuMzQzOSw2Ljk3MDY2LS40MzMxNiw1LjcyMDU4LjI5MDQ2LDQuNTIxOTEuOTg0MzYsNC4xNjY4NiwzLjA0NDg5LDQuNjcxNDQsNS42MjMyMnEuMDc1My4zODMuMTcuNzYxNzljLS4yOTQ1OC4wODM2Ny0uNTc5MDguMTcyODQtLjg1MTI3LjI2NzcxQzEuNTU1MTQsNy41MDE2NSwwLDguODMyMjUsMCwxMC4yMTIzMWMwLDEuNDI1NDYsMS42NjkzNSwyLjg1NTIsNC4yMDU3NSwzLjcyMnEuMzA4NS4xMDQ5NC42MjE5My4xOTQ0Mi0uMTAxNzkuNDA4LS4xODA2OC44MjExNGMtLjQ4MTA2LDIuNTMzNTQtLjEwNTM1LDQuNTQ1MjEsMS4wOTAxNyw1LjIzNDg0LDEuMjM0ODEuNzEyLDMuMzA3MjUtLjAxOTg1LDUuMzI1MzMtMS43ODM4N3EuMjM5MjYtLjIwOTE3LjQ3OTk0LS40NDIzOC4zMDI5LjI5MjI1LjYyMTczLjU2NzI3YzEuOTU0NzcsMS42ODIwNywzLjg4NTMxLDIuMzYxMzIsNS4wNzk4MiwxLjY2OTg2LDEuMjMzNjktLjcxNDE2LDEuNjM0NTQtMi44NzUyNSwxLjExNC01LjUwNDU5cS0uMDU5NTUtLjMwMTI0LS4xMzc5Mi0uNjE0ODEuMjE4MzQtLjA2NDQzLjQyNzcyLS4xMzM1NUMyMS4yODQ1NCwxMy4wNjkxNSwyMywxMS42NTY4MSwyMywxMC4yMTIzMiwyMyw4LjgyNzI2LDIxLjM5NDc4LDcuNDg3NzEsMTguOTEwNyw2LjYzMjU3Wk0xMi43Mjg0LDIuNzU1ODFDMTQuNDI2NDYsMS4yNzgsMTYuMDEzNDYuNjk0NTcsMTYuNzM2NTcsMS4xMTE2aDBjLjc3MDE0LjQ0NDIxLDEuMDY5NzEsMi4yMzU0LjU4NTgsNC41ODQ0MXEtLjA0NzU4LjIyOTUzLS4xMDM0Mi40NTcyNGEyMy41Mzc1MiwyMy41Mzc1MiwwLDAsMC0zLjA3NTI3LS40ODU4NEEyMy4wODEyOCwyMy4wODEyOCwwLDAsMCwxMi4xOTk1LDMuMjQwOTRRMTIuNDU3ODgsMi45OTE4NCwxMi43Mjg0LDIuNzU1ODFaTTYuNzkxMTEsMTEuMzkxMjRxLjMxMi42MDI2NS42NTIwNywxLjE5MDEzLjM0NjkyLjU5OTExLjcyMjEsMS4xODExN2EyMC45MjE2OCwyMC45MjE2OCwwLDAsMS0yLjExOTY3LS4zNDA4QzYuMjQ4NjcsMTIuNzY2LDYuNDk4ODcsMTIuMDg0NDMsNi43OTExMSwxMS4zOTEyNFpNNi43OSw5LjA4MDQxYy0uMjg2MTMtLjY3ODYzLS41MzA5My0xLjM0NTg2LS43MzA4NS0xLjk5MDE5LjY1NjI0LS4xNDY4OCwxLjM1Ni0uMjY2ODksMi4wODUxNi0uMzU4cS0uMzY2MTEuNTcxLS43MDUxLDEuMTU4NzdRNy4xMDA3Niw4LjQ3OCw2Ljc5LDkuMDgwNDFabS41MjIyOCwxLjE1NTUycS40NTQxMS0uOTQ1MTcuOTc4My0xLjg1NDJ2LjAwMDJxLjUyMzY5LS45MDg1NywxLjExNTIxLTEuNzc1NDJjLjY4NC0uMDUxNzEsMS4zODUzNi0uMDc4NzksMi4wOTQzMi0uMDc4NzkuNzEyMTIsMCwxLjQxNDM3LjAyNzI4LDIuMDk4MTkuMDc5NHEuNTg1MTQuODY0ODcsMS4xMDgxOCwxLjc2OTQxLjUyNTY1LjkwNjM1Ljk5MTUzLDEuODQ1NDUtLjQ2MDgzLjk0ODE3LS45ODgyOCwxLjg2MTczaC0uMDAwMXEtLjUyMjYxLjkwNzg2LTEuMTAzNCwxLjc4MDNjLS42ODI0LjA0ODc2LTEuMzg3Ni4wNzM5LTIuMTA2MjMuMDczOS0uNzE1NjgsMC0xLjQxMTkzLS4wMjIyOS0yLjA4MjQxLS4wNjU3NXEtLjU5NTU1LS44Njk5NS0xLjEyNDA2LTEuNzgzMDVRNy43Njc4OSwxMS4xODE0OCw3LjMxMjI3LDEwLjIzNTkzWm04LjI0ODUzLDIuMzM4NjJxLjM0Ny0uNjAxODIuNjY3LTEuMjE4NjNoMGEyMC44NjY3MSwyMC44NjY3MSwwLDAsMSwuNzcyMzgsMi4wMjMyNywyMC44NTE2NCwyMC44NTE2NCwwLDAsMS0yLjE0NTUyLjM2NTczUTE1LjIxOTM1LDEzLjE2NjgyLDE1LjU2MDgsMTIuNTc0NTVabS42NTc2Ny0zLjQ5MzQzcS0uMzE4ODMtLjYwNS0uNjYxNjMtMS4xOTY4NGgwcS0uMzM3MjctLjU4MjU4LS42OTk0LTEuMTUwMjJjLjczMzkuMDkyNjMsMS40MzcuMjE1NzksMi4wOTcxNy4zNjY1NEEyMC45NTkwOSwyMC45NTkwOSwwLDAsMSwxNi4yMTg0Nyw5LjA4MTEyWk0xMS41MTEsMy45NDM1OWEyMS4wMTI4OCwyMS4wMTI4OCwwLDAsMSwxLjM1MzUsMS42MzM5M3EtMS4zNTg0My0uMDY0MTktMi43MTg0LS4wMDA2MUMxMC41OTMsNC45ODc2NSwxMS4wNTA3LDQuNDQwMjIsMTEuNTExLDMuOTQzNTlaTTYuMjEyODQsMS4xNDA4MWMuNzY5NTMtLjQ0NTQzLDIuNDcwOTUuMTg5NzMsNC4yNjQyOCwxLjc4Mi4xMTQ2MS4xMDE3OS4yMjk3NC4yMDgzNi4zNDUwNy4zMTg2QTIzLjU0NTQyLDIzLjU0NTQyLDAsMCwwLDguODYyOTQsNS42NjYwOGEyNC4wMDgsMjQuMDA4LDAsMCwwLTMuMDY5MTYuNDc3cS0uMDg4LS4zNTIyOC0uMTU4MDgtLjcwODY2di4wMDAxQzUuMjAzMzksMy4yMjUzNiw1LjQ5MDQ0LDEuNTU5LDYuMjEyODQsMS4xNDA4MVpNNS4wOTEzMiwxMy4xODIzM3EtLjI4Ni0uMDgxODctLjU2Nzc4LS4xNzc3M0E4LjMyMzcxLDguMzIzNzEsMCwwLDEsMS44NDEsMTEuNTc5NTVhMi4wMzA3MiwyLjAzMDcyLDAsMCwxLS44NTg0OS0xLjM2NzI0YzAtLjgzNzQyLDEuMjQ4NjUtMS45MDU3MSwzLjMzMTE3LTIuNjMxNzhxLjM5MjA4LS4xMzYxLjc5MTYyLS4yNDkwOGEyMy41NjQ1NSwyMy41NjQ1NSwwLDAsMCwxLjEyMSwyLjkwNDc4QTIzLjkyMjQ3LDIzLjkyMjQ3LDAsMCwwLDUuMDkxMzIsMTMuMTgyMzNaTTEwLjQxNTk0LDE3LjY2MWE4LjMyMTYxLDguMzIxNjEsMCwwLDEtMi41NzQ2NywxLjYxMTg0aC0uMDAwMWEyLjAzMDQyLDIuMDMwNDIsMCwwLDEtMS42MTMwNi4wNjA2N2MtLjcyNTU2LS40MTgzNi0xLjAyNzA2LTIuMDMzNzYtLjYxNTczLTQuMjAwMzVxLjA3MzM3LS4zODQwNy4xNjgtLjc2MzYzYTIzLjEwNDQ0LDIzLjEwNDQ0LDAsMCwwLDMuMDk5NS40NDg2OSwyMy45MDk1NCwyMy45MDk1NCwwLDAsMCwxLjk3NDMxLDIuNDM5MjlRMTAuNjQsMTcuNDY0NTksMTAuNDE1OTQsMTcuNjYxWm0xLjEyMjIzLTEuMTEwNTNjLS40NjU2OS0uNTAyNTMtLjkzMDE1LTEuMDU4MzEtMS4zODM4My0xLjY1NjEycS42NjA1MS4wMjYsMS4zNDU2Ni4wMjYwNi43MDMyNiwwLDEuMzg4NDEtLjAzMDg0QTIwLjg5NDI1LDIwLjg5NDI1LDAsMCwxLDExLjUzODE3LDE2LjU1MDQ1Wm01Ljk2NjUxLDEuMzY3YTIuMDMwMzksMi4wMzAzOSwwLDAsMS0uNzUzLDEuNDI3OGMtLjcyNDg1LjQxOTU4LTIuMjc1LS4xMjU4MS0zLjk0NjU5LTEuNTY0MzFxLS4yODc1LS4yNDczNS0uNTc4MzctLjUyNzI3YTIzLjA4OTE0LDIzLjA4OTE0LDAsMCwwLDEuOTI3OS0yLjQ0OCwyMi45MzY0NywyMi45MzY0NywwLDAsMCwzLjExNTA3LS40ODAxNHEuMDcwMjQuMjg0LjEyNDQ5LjU1NjM4aDBBOC4zMiw4LjMyLDAsMCwxLDE3LjUwNDY4LDE3LjkxNzQ5Wm0uODM0MTctNC45MDczOWgtLjAwMDFjLS4xMjU3MS4wNDE2My0uMjU0NzguMDgxODQtLjM4NjI5LjEyMDgyYTIzLjA2MTIxLDIzLjA2MTIxLDAsMCwwLTEuMTY0NjgtMi45MTM3MywyMy4wNTExMiwyMy4wNTExMiwwLDAsMCwxLjExOTM4LTIuODcxMjhjLjIzNTI0LjA2ODIuNDYzNjUuMTQuNjgzNzIuMjE1NzksMi4xMjg0Mi43MzI1OCwzLjQyNjY1LDEuODE1OTMsMy40MjY2NSwyLjY1MDYxQzIyLjAxNzUzLDExLjEwMTQ1LDIwLjYxNTM4LDEyLjI1NTc0LDE4LjMzODg1LDEzLjAxMDFaIiBmaWxsPSIjNjFkYWZiIi8+PHBhdGggZD0iTTExLjUsOC4xNTg1YTIuMDUzODYsMi4wNTM4NiwwLDEsMS0yLjA1MzgxLDIuMDUzODFBMi4wNTM4MSwyLjA1MzgxLDAsMCwxLDExLjUsOC4xNTg1IiBmaWxsPSIjNjFkYWZiIi8+PC9zdmc+"
+                src="data:image/png;base64,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"
                 alt=""
-                height="20"
-              />{" "}
-              Sweet Cake
+                height="40"
+              />{"        "}
+              <strong className="black-text">                 </strong>
             </NavbarBrand>
             <NavbarToggler
               onClick={this.toggleCollapse("mainNavbarCollapse")}
@@ -58,100 +83,208 @@ class App extends Component {
               isOpen={this.state.collapseID}
               navbar
             >
-              <NavbarNav right>
-                <NavItem>
-                  <NavLink
-                    exact
-                    to="/"
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                  >
-                    Home
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/css"
-                  >
-                    CSS
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/components"
-                  >
-                    Components
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/advanced"
-                  >
-                    Advanced
-                  </NavLink>
-                </NavItem>
+              <NavbarNav left>
                 <NavItem>
                   <NavLink
                     onClick={this.closeCollapse("mainNavbarCollapse")}
                     to="/navigation"
-                  >
-                    Navigation
+                    >
+                    SAME DAY
                   </NavLink>
+                </NavItem>       
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline ">FLOWER                        
+                          <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                        </div>
+                      </DropdownToggle>
+                      <DropdownMenu  right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>        
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline">CAKES</div>                      
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                  </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>        
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline">GIFTS</div>                      
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>        
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline">ANNIVERSARY</div>                      
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>         
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline">PLANTS</div>                      
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>             
+                <NavItem>
+                    <Dropdown>
+                      <DropdownToggle nav>
+                        <div className="d-none d-md-inline">BIRTHDAY</div>                      
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem href="#!">Action</DropdownItem>
+                        <DropdownItem href="#!">Another Action</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                        <DropdownItem href="#!">Something else here</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+              </NavbarNav>
+
+              <NavbarNav right>
+                <NavItem>
+                  <FormInline waves>
+                    <div className="md-form my-0">
+                      <input
+                        className="form-control mr-sm-2 pt-2"
+                        type="text"
+                        placeholder="Search"
+                        aria-label="Search"
+                      />
+                    </div>
+                    <NavLink
+                      color="info" onClick={this.toggle}
+                      to="#"
+                    >
+                      <a class="uk-navbar-toggle tm-navbar-button uk-search-icon uk-icon"
+                        href="#" uk-search-icon="" aria-expanded="false">
+                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle fill="none" stroke="#000" stroke-width="1.1" cx="9" cy="9" r="7"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M14,14 L18,18 L14,14 Z"></path></svg>
+                      </a>
+                    </NavLink>
+                  </FormInline>
                 </NavItem>
                 <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/forms"
-                  >
-                    Forms
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/tables"
-                  >
-                    Tables
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/modals"
-                  >
-                    Modals
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/addons"
-                  >
-                    Addons
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/signin"
-                  >
+                  {/* <MDBBtn color="info" onClick={this.toggle}>
                     Sign In
+                  </MDBBtn> */}
+                  <NavLink
+                    color="info" onClick={this.toggle}
+                    to="#"
+                  >
+                    <a class="uk-navbar-item uk-link-muted tm-navbar-button uk-icon"
+                      href="#" uk-icon="user" aria-expanded="false">
+                      <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <circle fill="none" stroke="#000" stroke-width="1.1" cx="9.9" cy="6.4" r="4.4"></circle> <path fill="none" stroke="#000" stroke-width="1.1" d="M1.5,19 C2.3,14.5 5.8,11.2 10,11.2 C14.2,11.2 17.7,14.6 18.5,19.2"></path></svg>
+                    </a>
                   </NavLink>
-                </NavItem>    
+                  <MDBModal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className="cascading-modal"
+                  >
+                    <div className="modal-header primary-color white-text">
+                      <h4 className="title">
+                        <MDBIcon className="fa fa-pencil" /> Sign In
+                      </h4>
+                      <button type="button" className="close" onClick={this.toggle}>
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <MDBModalBody className="grey-text">
+                      <MDBInput
+                        size="sm"
+                        label="Your email"
+                        icon="envelope"
+                        group
+                        type="email"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+                      <MDBInput
+                        size="sm"
+                        label="Your password"
+                        icon="lock"
+                        group
+                        type="password"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                      <MDBBtn color="secondary" onClick={this.toggle}>
+                        Close
+                        </MDBBtn>{" "}
+                      <MDBBtn color="primary">Login</MDBBtn>
+                    </MDBModalFooter>
+                  </MDBModal>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    color="info" onClick={this.toggle}
+                    to="#"
+                  >
+                    <a class="uk-navbar-item uk-link-muted tm-navbar-button"
+                      href="#" uk-toggle="target: #cart-offcanvas" onclick="return false">
+                      <span uk-icon="cart" class="uk-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <circle cx="7.3" cy="17.3" r="1.4"></circle> <circle cx="13.3" cy="17.3" r="1.4"></circle> <polyline fill="none" stroke="#000" points="0 2 3.2 4 5.3 12.5 16 12.5 18 6.5 8 6.5"></polyline></svg></span><span class="uk-badge">2</span>
+                    </a>
+                  </NavLink>
+                </NavItem>
               </NavbarNav>
             </Collapse>
           </Navbar>
+
           {this.state.collapseID && overlay}
-          <main style={{ marginTop: "4rem" }}>
+          <main style={{ marginTop: "0rem" }}>
             <Routes />
           </main>
 
-          <Footer color="indigo">
-            <p className="footer-copyright mb-0 py-3 text-center">
+          <Footer
+            color="grey lighten-5"
+            style={{ marginTop: "0px" }}
+          >
+            <p className="footer-copyright mb-0 py-3 text-center black-text">
               &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="#"> Sweet Cake </a>
+              <a href="#" className="black-text"> Sweet Cake </a>
             </p>
           </Footer>
         </div>

@@ -18,18 +18,41 @@ import {
   CardGroup,
   CardImage,
   CardTitle,
-  CardText
+  CardText,
+  Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem
 
 } from "mdbreact";
 import DocsLink from "./DocsLink";
 const NavLink = require("react-router-dom").NavLink;
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapseID: "",
+    };
+  }
+
+  toggleCollapse = collapseID => () =>
+    this.setState(prevState => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+    }));
+
+  closeCollapse = collapseID => () =>
+    this.state.collapseID === collapseID && this.setState({ collapseID: "" });
+
   render() {
+    const overlay = (
+      <div
+        id="sidenav-overlay"
+        style={{ backgroundColor: "transparent" }}
+        onClick={this.toggleCollapse("mainNavbarCollapse")}
+      />
+    );
     return (
       <div>
-        <Container fluid>
-          <h4 className="mt-5 mb-2"></h4>
+        <div>
+          {/* <h4 className="mt-5 mb-2"></h4> */}
           <Carousel
             activeItem={1}
             length={4}
@@ -92,12 +115,12 @@ class HomePage extends React.Component {
               </CarouselItem>
             </CarouselInner>
           </Carousel>
-        </Container>
+        </div>
 
         <Container>
           <Row>
-            <Col md="10" className="mx-auto mt-4">
-              <h2 className="text-center my-4 font-weight-bold">
+            <Col md="12" className="mx-auto mt-3">
+              <h2 className="text-center my-3 font-weight-bold">
                 Welcome to Sweetcake
               </h2>
               <p className="text-center">
@@ -109,7 +132,37 @@ class HomePage extends React.Component {
 
               <hr className="my-5" />
 
-              <CardGroup deck className="mt-3">
+              <CardGroup deck className="mt-3" >
+                <Card>
+
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                    <CardBody>
+                      <CardTitle tag="h5">Chocolate Photo Cake</CardTitle>
+                      <CardText>
+                        Some quick example text to build on the card title and make up
+                        the bulk of the card's content.
+                    </CardText>
+                      <NavLink
+                        onClick={this.closeCollapse("mainNavbarCollapse")}
+                        tag="button"
+                        className="btn btn-sm btn-primary"
+                        to="/productpage"
+                      >
+                        READ MORE
+                    </NavLink>
+                    </CardBody>
+                  </NavLink>
+                </Card>
                 <Card>
                   <CardImage
                     src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
@@ -262,7 +315,7 @@ class HomePage extends React.Component {
 
               <hr className="my-5"></hr>
               <h2 className="text-center my-4 font-weight-bold">Best Selling Products</h2>
-              
+
               <CardGroup deck className="mt-3">
                 <Card>
                   <CardImage

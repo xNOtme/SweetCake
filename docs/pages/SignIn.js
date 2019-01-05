@@ -10,7 +10,8 @@ import {
   MDBCardBody,
   MDBModal,
   MDBModalBody,
-  MDBModalFooter
+  MDBModalFooter,
+  Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink,
 } from "mdbreact";
 import DocsLink from "./DocsLink";
 
@@ -18,7 +19,8 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      collapseID: "",
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -29,9 +31,17 @@ class SignIn extends React.Component {
     });
   }
 
+  toggleCollapse = collapseID => () =>
+    this.setState(prevState => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+    }));
+
+  closeCollapse = collapseID => () =>
+    this.state.collapseID === collapseID && this.setState({ collapseID: "" });
+
   render() {
     return (
-      <MDBContainer className="mt-5">        
+      <MDBContainer className="mt-5">
         <MDBRow>
           <MDBCol md="6">
             <form>
@@ -61,62 +71,62 @@ class SignIn extends React.Component {
             </form>
           </MDBCol>
           <MDBCol md="6">
-        <h2 className="mb-5 text-center">A form within a modal</h2>
-        <MDBRow>
-          <MDBCol size="12" className="text-center mb-5">
-            <MDBBtn color="info" onClick={this.toggle}>
-              Sign In
+            <h2 className="mb-5 text-center">A form within a modal</h2>
+            <MDBRow>
+              <MDBCol size="12" className="text-center mb-5">
+                <MDBBtn color="info" onClick={this.toggle}>
+                  Sign In
             </MDBBtn>
-            <MDBModal
-              isOpen={this.state.modal}
-              toggle={this.toggle}
-              className="cascading-modal"
-            >
-              <div className="modal-header primary-color white-text">
-                <h4 className="title">
-                  <MDBIcon className="fa fa-pencil" /> Sign In
+                <MDBModal
+                  isOpen={this.state.modal}
+                  toggle={this.toggle}
+                  className="cascading-modal"
+                >
+                  <div className="modal-header primary-color white-text">
+                    <h4 className="title">
+                      <MDBIcon className="fa fa-pencil" /> Sign In
                 </h4>
-                <button type="button" className="close" onClick={this.toggle}>
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <MDBModalBody className="grey-text">
-                <MDBInput
-                  size="sm"
-                  label="Your email"
-                  icon="envelope"
-                  group
-                  type="email"
-                  validate
-                  error="wrong"
-                  success="right"
-                />
-                <MDBInput
-                  size="sm"
-                  label="Your password"
-                  icon="lock"
-                  group                  
-                  type="password"
-                  validate
-                  error="wrong"
-                  success="right"
-                />
-              </MDBModalBody>
-              <MDBModalFooter>
-                <MDBBtn color="secondary" onClick={this.toggle}>
-                  Close
+                    <button type="button" className="close" onClick={this.toggle}>
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <MDBModalBody className="grey-text">
+                    <MDBInput
+                      size="sm"
+                      label="Your email"
+                      icon="envelope"
+                      group
+                      type="email"
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                    <MDBInput
+                      size="sm"
+                      label="Your password"
+                      icon="lock"
+                      group
+                      type="password"
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                  </MDBModalBody>
+                  <MDBModalFooter>
+                    <MDBBtn color="secondary" onClick={this.toggle}>
+                      Close
                 </MDBBtn>{" "}
-                <MDBBtn color="primary">Login</MDBBtn>
-              </MDBModalFooter>
-            </MDBModal>
+                    <MDBBtn color="primary">Login</MDBBtn>
+                  </MDBModalFooter>
+                </MDBModal>
+              </MDBCol>
+            </MDBRow>
           </MDBCol>
         </MDBRow>
-        </MDBCol>
-        </MDBRow>
-        
+
         <hr className="my-5" />
         <h2 className="mb-5">Form register</h2>
-        <MDBRow className="mt-5">          
+        <MDBRow className="mt-5">
           <MDBCol md="6">
             <form>
               <p className="h4 text-center mb-4">Sign up</p>
@@ -167,8 +177,75 @@ class SignIn extends React.Component {
                 </button>
               </div>
             </form>
-          </MDBCol> 
+          </MDBCol>
         </MDBRow>
+        <NavbarNav>
+
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/css"
+            >
+              CSS
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/components"
+            >
+              Components
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/advanced"
+            >
+              Advanced
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/navigation"
+            >
+              Navigation
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/forms"
+            >
+              Forms
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/tables"
+            >
+              Tables
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/modals"
+            >
+              Modals
+                  </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={this.closeCollapse("mainNavbarCollapse")}
+              to="/addons"
+            >
+              Addons
+                  </NavLink>
+          </NavItem>
+        </NavbarNav>
       </MDBContainer>
     );
   }
