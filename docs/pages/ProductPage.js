@@ -8,6 +8,7 @@ import {
   MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron
 } from "mdbreact";
 import DocsLink from "./DocsLink";
+import Cart from "./Card";
 const NavLink = require("react-router-dom").NavLink;
 
 class ProductPage extends React.Component {
@@ -18,11 +19,6 @@ class ProductPage extends React.Component {
       collapseID: "",
       modal: false,
       modal8: false,
-      products: [
-        { title: 'Apple', count: 0, price: 910 },
-        { title: 'IBM', count: 0, price: 200 },
-        { title: 'HP', count: 0, price: 300 },
-      ],
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -211,38 +207,5 @@ class ProductPage extends React.Component {
     );
   }
 }
-
-const ProductList = ({ products, onChange }) => (
-  <ul>
-    {products.map((product, i) => (
-      <li key={i}>
-        {product.title}
-        <input
-          type="text"
-          value={product.count}
-          onChange={e => onChange(i, parseInt(e.target.value) || 0)}
-        />
-      </li>
-    ))}
-  </ul>
-);
-
-const Total = ({ products }) => (
-  <h4>
-    Price:
-    {products.reduce((sum, i) => (
-      sum += i.count * i.price
-    ), 0)}
-  </h4>
-)
-
-const Tong = ({ getValue }) => (
-  <h4>
-    Price:
-    {getValue.reduce((sum, i) => (
-      sum += i.value
-    ), 0)}
-  </h4>
-)
 
 export default ProductPage;

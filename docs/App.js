@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import {
   Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink,
   Collapse, Footer, MDBInput, MDBBtn, MDBIcon, MDBModal, MDBModalBody, MDBModalFooter,
-  Container, Col, Row, FormInline,
+  Container, Col, Row, FormInline, 
+  Modal, ModalBody, ModalFooter, ModalHeader, Button,
   Dropdown, DropdownToggle, DropdownMenu,  DropdownItem, 
+  Card, CardBody, CardGroup, CardImage, CardTitle, CardText,
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
@@ -13,9 +15,11 @@ import Routes from "./Routes";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.toggleCollapse = this.toggleCollapse.bind(this);
     this.state = {
       collapseID: "",
-      modal: false
+      modal2: false,
+      modal8: false
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -28,11 +32,30 @@ class App extends Component {
   closeCollapse = collapseID => () =>
     this.state.collapseID === collapseID && this.setState({ collapseID: "" });
 
-  toggle() {
+  // toggle() {
+  //   this.setState({
+  //     modal: !this.state.modal
+  //   });
+  // }
+
+  toggle(nr) {
+    let modalNumber = "modal" + nr;
     this.setState({
-      modal: !this.state.modal
+      [modalNumber]: !this.state[modalNumber]
     });
   }
+  handleChange = value => {
+    console.log(value);
+  };
+
+  onChange = (index, val) => {
+    this.setState({
+      products: this.state.products.map((product, i) => (
+        i === index ? { ...product, count: val } : product
+      ))
+    })
+  }
+
   render() {
     const overlay = (
       <div
@@ -207,12 +230,9 @@ class App extends Component {
                   </FormInline>
                 </NavItem>
                 <NavItem>
-                  {/* <MDBBtn color="info" onClick={this.toggle}>
-                    Sign In
-                  </MDBBtn> */}
                   <NavLink
-                    color="info" onClick={this.toggle}
-                    to="#"
+                    color="info" onClick={() => this.toggle(2)}
+                    to="/"
                   >
                     <a class="uk-navbar-item uk-link-muted tm-navbar-button uk-icon"
                       href="#" uk-icon="user" aria-expanded="false">
@@ -220,15 +240,17 @@ class App extends Component {
                     </a>
                   </NavLink>
                   <MDBModal
-                    isOpen={this.state.modal}
-                    toggle={this.toggle}
+                    isOpen={this.state.modal2}
+                    toggle={() => this.toggle(2)}
+                    // isOpen={this.state.modal}
+                    // toggle={this.toggle}
                     className="cascading-modal"
                   >
                     <div className="modal-header primary-color white-text">
                       <h4 className="title">
                         <MDBIcon className="fa fa-pencil" /> Sign In
                       </h4>
-                      <button type="button" className="close" onClick={this.toggle}>
+                      <button type="button" className="close" onClick={() => this.toggle(2)}>
                         <span aria-hidden="true">×</span>
                       </button>
                     </div>
@@ -255,17 +277,18 @@ class App extends Component {
                       />
                     </MDBModalBody>
                     <MDBModalFooter>
-                      <MDBBtn color="secondary" onClick={this.toggle}>
+                      <MDBBtn color="secondary" onClick={() => this.toggle(2)}>
                         Close
                         </MDBBtn>{" "}
                       <MDBBtn color="primary">Login</MDBBtn>
                     </MDBModalFooter>
                   </MDBModal>
                 </NavItem>
+                
                 <NavItem>
                   <NavLink
-                    color="info" onClick={this.toggle}
-                    to="#"
+                    onClick={() => this.toggle(8)}
+                    to="/"
                   >
                     <a class="uk-navbar-item uk-link-muted tm-navbar-button"
                       href="#" uk-toggle="target: #cart-offcanvas" onclick="return false">
@@ -292,6 +315,80 @@ class App extends Component {
               <a href="#" className="black-text"> Sweet Cake </a>
             </p>
           </Footer>
+
+          <Row>
+          <Modal
+            isOpen={this.state.modal8}
+            toggle={() => this.toggle(8)}
+            fullHeight
+            position="right"
+          >
+            <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
+            <ModalBody>
+                <CardGroup className="ml-2 mr-2">
+                  <Row>
+                    <Card className="mb-1">
+                      <CardBody>
+                        <Row>
+                          <Col xs="4">
+                            <CardImage
+                              src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              alt="Card image cap" top hover overlay="white-slight" />
+                          </Col>
+                          <Col xs="7">
+                            <CardText small muted >
+                              <strong>Chocolate Title</strong><br />
+                              Order this delicious Fresh Chocolate
+                            <Row>
+                                <Col xs="5"><p>$1599.00</p></Col>
+                                <Col xs="7"><p>1 × $1599.00</p></Col>
+                              </Row>
+                            </CardText>
+                          </Col>
+                          <Col className="font-weight-bold red-text" xs="1">
+                            X
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </Row>
+                  <Row>
+                    <Card className="mt-1">
+                      <CardBody>
+                        <Row>
+                          <Col xs="4">
+                            <CardImage
+                              src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                              alt="Card image cap" top hover overlay="white-slight" />
+                          </Col>
+                          <Col xs="7">
+                            <CardText small muted >
+                              <strong>Chocolate Title</strong><br />
+                              Order this delicious Fresh Chocolate
+                            <Row>
+                                <Col xs="5"><p>$1599.00</p></Col>
+                                <Col xs="7"><p>1 × $1599.00</p></Col>
+                              </Row>
+                            </CardText>
+                          </Col>
+                          <Col className="font-weight-bold red-text" xs="1">
+                            X
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </Row>
+                </CardGroup>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={() => this.toggle(8)}>
+                Close
+                </Button>
+              <Button color="primary">CHECKOUT</Button>
+            </ModalFooter>
+          </Modal>
+        </Row>
+
         </div>
       </Router>
     );
