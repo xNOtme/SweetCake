@@ -51,8 +51,7 @@ import NavbarPage from "./pages/NavbarPage";
 import IframePage from "./pages/IframePage";
 import SignIn from "./pages/SignIn";
 import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
-import Cart from "./pages/Cart";
+// import CartPage from "./pages/CartPage";
 
 class Routes extends React.Component {
   render() {
@@ -69,8 +68,7 @@ class Routes extends React.Component {
         <Route exact path="/addons" component={AddonsNavPage} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/productpage" component={ProductPage} />
-        <Route exact path="/cartpage" component={CartPage} />
-        <Route exact path="/cart" component={Cart} />
+        {/* <Route exact path="/cartpage" component={CartPage} /> */}
 
         {/* FREE */}
         <Route path="/css/animations" component={AnimationPage} />
@@ -115,8 +113,7 @@ class Routes extends React.Component {
         <Route path="/addons/iframe" component={IframePage} />
         <Route path="/advanced/alerts" component={AlertPage} />
         <Route path="/productpage" component={ProductPage} />
-        <Route path="/productpage/cartpage" component={CartPage} />
-        <Route path="/productpage/cart" component={Cart} />
+        {/* <Route path="/productpage/cartpage" component={CartPage} /> */}
         <Route
           render={function() {
             return <h1>Not Found</h1>;
