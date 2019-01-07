@@ -325,66 +325,73 @@ class App extends Component {
           >
             <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
             <ModalBody>
-                <CardGroup className="ml-2 mr-2">
-                  <Row>
-                    <Card className="mb-1">
-                      <CardBody>
-                        <Row>
-                          <Col xs="4">
-                            <CardImage
-                              src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              alt="Card image cap" top hover overlay="white-slight" />
-                          </Col>
-                          <Col xs="7">
-                            <CardText small muted >
-                              <strong>Chocolate Title</strong><br />
-                              Order this delicious Fresh Chocolate
+              <CardGroup className="ml-2 mr-2">
+                <Row>
+                  <Card className="mb-1">
+                    <CardBody>
+                      <Row>
+                        <Col xs="4">
+                          <CardImage
+                            src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                            alt="Card image cap" top hover overlay="white-slight" />
+                        </Col>
+                        <Col xs="7">
+                          <CardText small muted >
+                            <strong>Chocolate Title</strong><br />
+                            Order this delicious Fresh Chocolate
                             <Row>
-                                <Col xs="5"><p>$1599.00</p></Col>
-                                <Col xs="7"><p>1 × $1599.00</p></Col>
-                              </Row>
-                            </CardText>
+                              <Col xs="5"><p>$1599.00</p></Col>
+                              <Col xs="7"><p>1 × $1599.00</p></Col>
+                            </Row>
+                          </CardText>
+                        </Col>
+                        <Col className="font-weight-bold red-text" xs="1">
+                          X
                           </Col>
-                          <Col className="font-weight-bold red-text" xs="1">
-                            X
-                          </Col>
-                        </Row>
-                      </CardBody>
-                    </Card>
-                  </Row>
-                  <Row>
-                    <Card className="mt-1">
-                      <CardBody>
-                        <Row>
-                          <Col xs="4">
-                            <CardImage
-                              src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
-                              alt="Card image cap" top hover overlay="white-slight" />
-                          </Col>
-                          <Col xs="7">
-                            <CardText small muted >
-                              <strong>Chocolate Title</strong><br />
-                              Order this delicious Fresh Chocolate
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Row>
+                <Row>
+                  <Card className="mt-1">
+                    <CardBody>
+                      <Row>
+                        <Col xs="4">
+                          <CardImage
+                            src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                            alt="Card image cap" top hover overlay="white-slight" />
+                        </Col>
+                        <Col xs="7">
+                          <CardText small muted >
+                            <strong>Chocolate Title</strong><br />
+                            Order this delicious Fresh Chocolate
                             <Row>
-                                <Col xs="5"><p>$1599.00</p></Col>
-                                <Col xs="7"><p>1 × $1599.00</p></Col>
-                              </Row>
-                            </CardText>
+                              <Col xs="5"><p>$1599.00</p></Col>
+                              <Col xs="7"><p>1 × $1599.00</p></Col>
+                            </Row>
+                          </CardText>
+                        </Col>
+                        <Col className="font-weight-bold red-text" xs="1">
+                          X
                           </Col>
-                          <Col className="font-weight-bold red-text" xs="1">
-                            X
-                          </Col>
-                        </Row>
-                      </CardBody>
-                    </Card>
-                  </Row>
-                </CardGroup>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Row>
+              </CardGroup>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={() => this.toggle(8)}>
-                Close
+              <div>
+                <Row>
+                  <Col xs="1"></Col>
+                  <Col xs="5"><h5><strong>Subtotal</strong></h5></Col>
+                  <Col xs="5"><h5><strong>$3599.00</strong></h5></Col>
+                </Row>
+                <Button color="secondary" onClick={() => this.toggle(8)}>
+                  View CART
                 </Button>
-              <Button color="primary">CHECKOUT</Button>
+                <Button color="primary">CHECKOUT</Button>
+              </div>
             </ModalFooter>
           </Modal>
         </Row>

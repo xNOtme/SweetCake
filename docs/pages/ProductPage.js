@@ -3,9 +3,10 @@ import {
   MDBContainer, MDBRow, MDBCol, MDBInputSelect, Button,
   Modal, ModalBody, ModalFooter, ModalHeader,
   Card, CardBody, CardGroup, CardImage, CardTitle,
-  Collapse, Col, Row,
+  Collapse, Col, Row, View,
   CardText, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBListGroup, MDBListGroupItem,
-  MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron
+  MDBCardHeader, MDBCardFooter, MDBBtn, MDBNav, MDBNavItem, MDBNavLink, MDBCardGroup, MDBJumbotron,  
+  Carousel, CarouselCaption, CarouselInner, CarouselItem,
 } from "mdbreact";
 import DocsLink from "./DocsLink";
 import Cart from "./Card";
@@ -54,7 +55,45 @@ class ProductPage extends React.Component {
         <MDBRow>
           <MDBCol md="6">
             <p className="h4 text-left mb-4">Photo Cake</p>
-            <img src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-fluid" alt="Responsive image"></img>
+            <div>
+          <Carousel
+            activeItem={1}
+            length={2}
+            showControls={true}
+            showIndicators={true}
+            className="z-depth-1"
+          >
+            <CarouselInner>
+              <CarouselItem itemId="1">
+                <View>
+                  <img
+                    className="img-fluid"
+                    src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                    alt="First slide"
+                  />
+                </View>
+                <CarouselCaption>
+                  <h3 className="h3-responsive"> </h3>
+                  <p> </p>
+                </CarouselCaption>
+              </CarouselItem>
+              <CarouselItem itemId="2">
+                <View>
+                  <img
+                    className="img-fluid"
+                    src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                    alt="Second slide"
+                  />
+                </View>
+                <CarouselCaption>
+                  <h3 className="h3-responsive"> </h3>
+                  <p> </p>
+                </CarouselCaption>
+              </CarouselItem>
+            </CarouselInner>
+          </Carousel>
+        </div>
+
           </MDBCol>
           <MDBCol md="1" />
           <MDBCol md="5">
@@ -93,115 +132,90 @@ class ProductPage extends React.Component {
                   />
                 </MDBCol>
               </MDBRow>
-              <Button color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Add To Cart</Button>
+              <Button color="warning" onClick={() => this.toggle(8)}>Add To Cart</Button>
               <button type="button" onClick={() => this.toggle(8)} class="btn btn-light" >Add To Wish List</button>
             </form>
           </MDBCol>
 
           <MDBRow>
-            <Modal
-              isOpen={this.state.modal8}
-              toggle={() => this.toggle(8)}
-              fullHeight
-              position="right"
-            >
-              <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
-              <ModalBody>
-                <MDBRow>
-                  <CardGroup className="ml-2 mr-2">
-                    <Card>
-                      <CardBody>
-                        <MDBRow>
-                          <MDBCol xs="4">
-                            <CardImage
-                              src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              alt="Card image cap" top hover overlay="white-slight" />
-                          </MDBCol>
-                          <MDBCol xs="7">
-                            <CardText small muted >
-                            <strong>Chocolate Title</strong><br/>
+          <Modal
+            isOpen={this.state.modal8}
+            toggle={() => this.toggle(8)}
+            fullHeight
+            position="right"
+          >
+            <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
+            <ModalBody>
+              <CardGroup className="ml-2 mr-2">
+                <Row>
+                  <Card className="mb-1">
+                    <CardBody>
+                      <Row>
+                        <Col xs="4">
+                          <CardImage
+                            src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                            alt="Card image cap" top hover overlay="white-slight" />
+                        </Col>
+                        <Col xs="7">
+                          <CardText small muted >
+                            <strong>Chocolate Title</strong><br />
                             Order this delicious Fresh Chocolate
                             <Row>
                               <Col xs="5"><p>$1599.00</p></Col>
                               <Col xs="7"><p>1 × $1599.00</p></Col>
                             </Row>
-                            </CardText>
-                          </MDBCol>
-                          <MDBCol className="font-weight-bold red-text" xs="1">
-                            X
-                          </MDBCol>
-                        </MDBRow>
-                      </CardBody>
-                    </Card>
-                  </CardGroup>
-                </MDBRow>
-              </ModalBody>
-              <ModalFooter>
+                          </CardText>
+                        </Col>
+                        <Col className="font-weight-bold red-text" xs="1">
+                          X
+                          </Col>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Row>
+                <Row>
+                  <Card className="mt-1">
+                    <CardBody>
+                      <Row>
+                        <Col xs="4">
+                          <CardImage
+                            src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                            alt="Card image cap" top hover overlay="white-slight" />
+                        </Col>
+                        <Col xs="7">
+                          <CardText small muted >
+                            <strong>Chocolate Title</strong><br />
+                            Order this delicious Fresh Chocolate
+                            <Row>
+                              <Col xs="5"><p>$1599.00</p></Col>
+                              <Col xs="7"><p>1 × $1599.00</p></Col>
+                            </Row>
+                          </CardText>
+                        </Col>
+                        <Col className="font-weight-bold red-text" xs="1">
+                          X
+                          </Col>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Row>
+              </CardGroup>
+            </ModalBody>
+            <ModalFooter>
+              <div>
+                <Row>
+                  <Col xs="1"></Col>
+                  <Col xs="5"><h5><strong>Subtotal</strong></h5></Col>
+                  <Col xs="5"><h5><strong>$3599.00</strong></h5></Col>
+                </Row>
                 <Button color="secondary" onClick={() => this.toggle(8)}>
-                  Close
-            </Button>
+                  View CART
+                </Button>
                 <Button color="primary">CHECKOUT</Button>
-              </ModalFooter>
-            </Modal>
-          </MDBRow>
-
-          <MDBRow>
-            <Collapse id="basicCollapse" isOpen={this.state.collapseID}>
-              <MDBCard className="text-center">
-                <MDBCardHeader>
-                  <MDBNav header>
-                    <MDBNavItem>
-                      <MDBNavLink active to="#">
-                        Shopping cart
-                      </MDBNavLink>
-                    </MDBNavItem>
-                  </MDBNav>
-                </MDBCardHeader>
-
-                <MDBCardBody>
-                  <MDBRow>
-                    <MDBCol md="3">
-                      <MDBCardTitle tag="h5">Chocolate Photo Cake</MDBCardTitle>
-                      <CardImage
-                        src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        alt="Card image cap" top hover overlay="white-slight" />
-                    </MDBCol>
-                    <MDBCol md="1"></MDBCol>
-                    <MDBCol md="4" className="mx-auto ml-4 mt-4">
-                      <MDBRow className="mt-4">
-                        <MDBCol md="6">
-                          <p className="h6 text-left mt-4">Quantity:</p>
-                        </MDBCol>
-                        <MDBCol md="6">
-                          <p className="h6 text-left mt-4">1</p>
-                        </MDBCol>
-                      </MDBRow>
-                      <MDBRow>
-                        <MDBCol md="6">
-                          <p className="h6 text-left mt-4">Price:</p>
-                        </MDBCol>
-                        <MDBCol md="6">
-                          <p className="h6 text-left mt-4">₹910.00</p>
-                        </MDBCol>
-                      </MDBRow>
-                      <MDBRow>
-                        <MDBCol md="6">
-                          <p className="h6 text-left text-warning mt-4">Total:</p>
-                        </MDBCol>
-                        <MDBCol md="6">
-                          <p className="h6 text-left text-warning mt-4">₹910.00</p>
-                        </MDBCol>
-                      </MDBRow>
-                    </MDBCol>
-                    <MDBCol md="4" className="mx-auto mt-4">
-                      <Button className="mt-3 btn-sm" color="warning" onClick={() => this.toggleCollapse("basicCollapse")}>Remove</Button>
-                    </MDBCol>
-                  </MDBRow>
-                </MDBCardBody>
-
-              </MDBCard>
-            </Collapse>
-          </MDBRow>
+              </div>
+            </ModalFooter>
+          </Modal>
+          </MDBRow>          
         </MDBRow>
       </MDBContainer>
     );
