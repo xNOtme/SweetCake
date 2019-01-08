@@ -129,95 +129,117 @@ class HomePage extends React.Component {
           </Carousel>
         </div>
 
-        <div className="mt-5 ml-4 mr-4">
-          <CardGroup sm="4" xs="6" deck className="mt-3">
-            <Card>
-              <NavLink
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-                to="/productpage"
-              >
-                <CardImage
-                  src="https://img.bestrecipes.com.au/LYibLhwl/h300-w400-cscale/br-api/asset/5981/plain-cake-recipe.jpg"
-                  alt="Card image cap"
-                  top
-                  hover
-                  overlay="white-slight"
-                />
-              </NavLink>
-            </Card>
-            <Card>
-              <NavLink
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-                to="/productpage"
-              >
-                <CardImage
-                  src="https://thermobliss.com/wp-content/uploads/2017/04/Thermomix-Butter-Cake-2.jpg"
-                  alt="Card image cap"
-                  top
-                  hover
-                  overlay="white-slight"
-                />
-              </NavLink>
-            </Card>
-            <Card>
-              <NavLink
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-                to="/productpage"
-              >
-                <CardImage
-                  src="https://tastykitchen.com/recipes/wp-content/uploads/sites/2/2009/09/3908654410_7881d60245.jpg"
-                  alt="Card image cap"
-                  top
-                  hover
-                  overlay="white-slight"
-                />
-              </NavLink>
-            </Card>
-            <Card>
-              <NavLink
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-                to="/productpage"
-              >
-                <CardImage
-                  src="https://4.bp.blogspot.com/-OOJKYGOmJWw/TaMX_4ikA0I/AAAAAAAAAXw/OeLCLd3FTT4/s400/dscn0341a.jpg"
-                  alt="Card image cap"
-                  top
-                  hover
-                  overlay="white-slight"
-                />
-              </NavLink>
-            </Card>
-            <Card>
-              <NavLink
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-                to="/productpage"
-              >
-                <CardImage
-                  src="https://i.kym-cdn.com/photos/images/newsfeed/000/501/499/7e1.jpg"
-                  alt="Card image cap"
-                  top
-                  hover
-                  overlay="white-slight"
-                />
-              </NavLink>
-            </Card>
+        <div className="mt-3 ml-4 mr-4">
+          <CardGroup deck className="mt-3">
+            <Row>
+              <Col xs="6" sm="4" md="2">
+                <Card >
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://img.bestrecipes.com.au/LYibLhwl/h300-w400-cscale/br-api/asset/5981/plain-cake-recipe.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+              <Col xs="6" sm="4" md="2">
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://thermobliss.com/wp-content/uploads/2017/04/Thermomix-Butter-Cake-2.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+              <Col xs="6" sm="4" md="2">
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://tastykitchen.com/recipes/wp-content/uploads/sites/2/2009/09/3908654410_7881d60245.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+              <Col xs="6" sm="4" md="2">
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://4.bp.blogspot.com/-OOJKYGOmJWw/TaMX_4ikA0I/AAAAAAAAAXw/OeLCLd3FTT4/s400/dscn0341a.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+              <Col xs="6" sm="4" md="2">
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://i.kym-cdn.com/photos/images/newsfeed/000/501/499/7e1.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+              <Col xs="6" sm="4" md="2">
+                <Card>
+                  <NavLink
+                    onClick={this.closeCollapse("mainNavbarCollapse")}
+                    to="/productpage"
+                  >
+                    <CardImage
+                      src="https://gracefoods.com/images/com_yoorecipe/744/cropped-Black-forest-cake.jpg"
+                      alt="Card image cap"
+                      top
+                      hover
+                      overlay="white-slight"
+                    />
+                  </NavLink>
+                </Card>
+              </Col>
+            </Row>
           </CardGroup>
         </div>
 
         <Container>
           <Row>
             <Col md="12" className="mx-auto mt-3">
+              <hr className="my-3" />
               <h2 className="text-center my-3 font-weight-bold">
                 Welcome to Sweetcake
               </h2>
-              <p className="text-center">
-                Hey Everyone! We are Sweet Cake founded by a group of Online Cake Store professionals passionate about serving authentic
-              </p>
-              <p className="text-center">
-                Custamize Cake Designer Cake back in 2014. We Provide Online Cake And Flower Delivery in Delhi/NCR
-              </p>
-
-              <hr className="my-5" />
+              <hr className="my-3" />
 
               <CardGroup deck className="mt-3" >
                 <Card>

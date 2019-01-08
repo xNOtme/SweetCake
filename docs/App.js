@@ -75,7 +75,7 @@ class App extends Component {
                     src="data:image/png;base64,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"
                     alt=""
                     height="60"
-                  />{" "}
+                  />
                   <strong className="black-text">Sweet Cake</strong>
                 </NavbarBrand>
               </Col>
@@ -245,7 +245,7 @@ class App extends Component {
                     // toggle={this.toggle}
                     className="cascading-modal"
                   >
-                    <div className="modal-header primary-color white-text">
+                    <div className="modal-header grey darken-4-color white-text">
                       <h4 className="title">
                         <MDBIcon className="fa fa-pencil" /> Sign In
                       </h4>
