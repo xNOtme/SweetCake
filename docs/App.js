@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import {
   Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink,
   Collapse, Footer, MDBInput, MDBBtn, MDBIcon, MDBModal, MDBModalBody, MDBModalFooter,
-  Container, Col, Row, FormInline, 
+  Container, Col, Row, FormInline,
   Modal, ModalBody, ModalFooter, ModalHeader, Button,
-  Dropdown, DropdownToggle, DropdownMenu,  DropdownItem, 
+  Dropdown, DropdownToggle, DropdownMenu, DropdownItem,
   Card, CardBody, CardGroup, CardImage, CardTitle, CardText,
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -86,7 +86,7 @@ class App extends Component {
             color="grey darken-3"
             dark
             expand="md"
-            style={{ marginTop: "0px"}}
+            style={{ marginTop: "0px" }}
             fixed="top"
             scrolling
           >
@@ -111,99 +111,99 @@ class App extends Component {
                   <NavLink
                     onClick={this.closeCollapse("mainNavbarCollapse")}
                     to="/navigation"
-                    >
+                  >
                     SAME DAY
                   </NavLink>
-                </NavItem>       
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">FLOWER                        
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">FLOWER
                           <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
-                        </div>
-                      </DropdownToggle>
-                      <DropdownMenu  right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>        
+                      </div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">CAKES                    
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">CAKES
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
-                        </div>  
-                  </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>        
+                      </div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">GIFTS                   
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">GIFTS
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
-                        </div>   
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>        
+                      </div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">ANNIVERSARY                
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">ANNIVERSARY
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
-                        </div>      
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>         
+                      </div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">PLANTS
-                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span></div>     
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>             
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">PLANTS
+                        <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span></div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
                 <NavItem>
-                    <Dropdown>
-                      <DropdownToggle nav>
-                        <div className="white-text">BIRTHDAY   
+                  <Dropdown>
+                    <DropdownToggle nav>
+                      <div className="white-text">BIRTHDAY
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span>
-                        </div>                   
-                      </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                        <DropdownItem href="#!">Something else here</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>
+                      </div>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem href="#!">Action</DropdownItem>
+                      <DropdownItem href="#!">Another Action</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="#!">Something else here</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </NavItem>
               </NavbarNav>
 
               <NavbarNav right>
@@ -306,94 +306,188 @@ class App extends Component {
           </main>
 
           <Footer
-            color="grey lighten-5"
-            style={{ marginTop: "0px" }}
+            color="grey lighten-4"
+            style={{ paddingTop: "20px", magrinTop: "-1.5rem" }}
           >
-            <p className="footer-copyright mb-0 py-3 text-center black-text">
-              &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="#" className="black-text"> Sweet Cake </a>
-            </p>
+            <Container>
+              <Row>
+                <Col md="3" sm="4" xs="6">
+                  <Row>
+                    <Col xs="4">
+                      <svg width="75" height="75" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polygon fill="none" stroke="#9e9e9e " stroke-width="1.01" points="10 2 12.63 7.27 18.5 8.12 14.25 12.22 15.25 18 10 15.27 4.75 18 5.75 12.22 1.5 8.12 7.37 7.27"></polygon></svg>
+                    </Col>
+                    <Col xs="8">
+                      <strong className="mt-1 grey-text">Mauris placerat</strong>
+                      <p className="mt-1 grey-text">Donec mollis nibh dolor, sit amet auctor</p>
+                    </Col>
+                  </Row>
+                </Col>
+
+                <Col md="3" sm="4" xs="6">
+                  <Row>
+                    <Col xs="4">
+                      <svg width="75" height="75" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#9e9e9e" stroke-width="1.01" d="M6.189,13.611C8.134,15.525 11.097,18.239 13.867,18.257C16.47,18.275 18.2,16.241 18.2,16.241L14.509,12.551L11.539,13.639L6.189,8.29L7.313,5.355L3.76,1.8C3.76,1.8 1.732,3.537 1.7,6.092C1.667,8.809 4.347,11.738 6.189,13.611"></path></svg>
+                    </Col>
+                    <Col xs="8">
+                      <strong className="mt-1 grey-text">Lorem ipsum</strong>
+                      <p className="mt-1 grey-text">Sit amet, consectetur adipiscing elit</p>
+                    </Col>
+                  </Row>
+                </Col>
+
+                <Col md="3" sm="4" xs="6">
+                  <Row>
+                    <Col xs="4">
+                      <svg width="75" height="75" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#9e9e9e" stroke-width="1.01" d="M10,0.5 C6.41,0.5 3.5,3.39 3.5,6.98 C3.5,11.83 10,19 10,19 C10,19 16.5,11.83 16.5,6.98 C16.5,3.39 13.59,0.5 10,0.5 L10,0.5 Z"></path> <circle fill="none" stroke="#9e9e9e" cx="10" cy="6.8" r="2.3"></circle></svg>
+                    </Col>
+                    <Col xs="8">
+                      <strong className="mt-1 grey-text">Proin pharetra</strong>
+                      <p className="mt-1 grey-text">Nec quam a fermentum ut viverra</p>
+                    </Col>
+                  </Row>
+                </Col>
+
+                <Col md="3" sm="4" xs="6">
+                  <Row>
+                    <Col xs="4">
+                      <svg fill="none" stroke="#9e9e9e" width="75" height="75" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline points="2 0.5 19.5 0.5 19.5 13"></polyline> <path polyline d="M5,19.71 L5,15 L0,15 L0,2 L18,2 L18,15 L9.71,15 L5,19.71 L5,19.71 L5,19.71 Z M1,14 L6,14 L6,17.29 L9.29,14 L17,14 L17,3 L1,3 L1,14 L1,14 L1,14 Z"></path></svg>
+                    </Col>
+                    <Col xs="8">
+                      <strong className="mt-1 grey-text">Praesent ultrices</strong>
+                      <p className="mt-1 grey-text">Praesent ultrices, orci nec finibus</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+
+            <div style={{ marginTop: "30px", paddingTop: "20px", paddingBottom: "10px", backgroundColor: "#222" }}>
+              <Container>
+                <Row>
+                  <Col md="4" sm="4" xs="6">
+                    <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4MCA0ODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4MCA0ODA7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTgwLDIzMmMyNi41MSwwLDQ4LTIxLjQ5LDQ4LTQ4YzAtMjYuNTEtMjEuNDktNDgtNDgtNDhzLTQ4LDIxLjQ5LTQ4LDQ4QzMyLjAyNiwyMTAuNDk5LDUzLjUwMSwyMzEuOTc0LDgwLDIzMnogTTgwLDE1MiAgICAgYzE3LjY3MywwLDMyLDE0LjMyNywzMiwzMnMtMTQuMzI3LDMyLTMyLDMycy0zMi0xNC4zMjctMzItMzJTNjIuMzI3LDE1Miw4MCwxNTJ6IiBmaWxsPSIjRkZGRkZGIi8+CgkJCTxwYXRoIGQ9Ik02NCw2NGMyMi4wOCwwLjAyNiwzOS45NzQsMTcuOTIsNDAsNDBjMCw0LjQxOCwzLjU4Miw4LDgsOHM4LTMuNTgyLDgtOGMwLjAyNi0yMi4wOCwxNy45Mi0zOS45NzQsNDAtNDAgICAgIGM0LjQxOCwwLDgtMy41ODIsOC04cy0zLjU4Mi04LTgtOGMtMjIuMDgtMC4wMjYtMzkuOTc0LTE3LjkyLTQwLTQwYzAtNC40MTgtMy41ODItOC04LThzLTgsMy41ODItOCw4ICAgICBjLTAuMDI2LDIyLjA4LTE3LjkyLDM5Ljk3NC00MCw0MGMtNC40MTgsMC04LDMuNTgyLTgsOFM1OS41ODIsNjQsNjQsNjR6IE0xMTIsMzYuOGM0Ljc0NSw3Ljg2NSwxMS4zMzUsMTQuNDU1LDE5LjIsMTkuMiAgICAgYy03Ljg2NSw0Ljc0NS0xNC40NTUsMTEuMzM1LTE5LjIsMTkuMmMtNC43NDUtNy44NjUtMTEuMzM1LTE0LjQ1NS0xOS4yLTE5LjJDMTAwLjY2NSw1MS4yNTUsMTA3LjI1NSw0NC42NjUsMTEyLDM2Ljh6IiBmaWxsPSIjRkZGRkZGIi8+CgkJCTxwYXRoIGQ9Ik0zODQsNDAwYy0yMi4wOC0wLjAyNi0zOS45NzQtMTcuOTItNDAtNDBjMC00LjQxOC0zLjU4Mi04LTgtOHMtOCwzLjU4Mi04LDhjLTAuMDI2LDIyLjA4LTE3LjkyLDM5Ljk3NC00MCw0MCAgICAgYy00LjQxOCwwLTgsMy41ODItOCw4czMuNTgyLDgsOCw4YzIyLjA4LDAuMDI2LDM5Ljk3NCwxNy45Miw0MCw0MGMwLDQuNDE4LDMuNTgyLDgsOCw4czgtMy41ODIsOC04ICAgICBjMC4wMjYtMjIuMDgsMTcuOTItMzkuOTc0LDQwLTQwYzQuNDE4LDAsOC0zLjU4Miw4LThTMzg4LjQxOCw0MDAsMzg0LDQwMHogTTMzNiw0MjcuMmMtNC43NDUtNy44NjUtMTEuMzM1LTE0LjQ1NS0xOS4yLTE5LjIgICAgIGM3Ljg2NS00Ljc0NSwxNC40NTUtMTEuMzM1LDE5LjItMTkuMmM0Ljc0NSw3Ljg2NSwxMS4zMzUsMTQuNDU1LDE5LjIsMTkuMkMzNDcuMzM1LDQxMi43NDUsMzQwLjc0NSw0MTkuMzM1LDMzNiw0MjcuMnoiIGZpbGw9IiNGRkZGRkYiLz4KCQkJPHBhdGggZD0iTTE5MiwxNjBjLTEzLjI1NSwwLTI0LDEwLjc0NS0yNCwyNHYzMmgtNDB2MTZoNDhjNC40MTgsMCw4LTMuNTgyLDgtOHYtNDBjMC00LjQxOCwzLjU4Mi04LDgtOHM4LDMuNTgyLDgsOHY1NiAgICAgYzAsNC40MTgtMy41ODIsOC04LDhoLTY0Yy00LjQxOCwwLTgsMy41ODItOCw4djQwYzAsMi4xMjIsMC44NDQsNC4xNTYsMi4zNDQsNS42NTZsNDMuMzEyLDQzLjMxMiAgICAgYzEuNTAyLDEuNTAyLDIuMzQ2LDMuNTQsMi4zNDQsNS42NjRWNDI0YzAsNC40MTgtMy41ODIsOC04LDhzLTgtMy41ODItOC04di02NGMwLTIuMTIyLTAuODQ0LTQuMTU2LTIuMzQ0LTUuNjU2bC0zMi0zMiAgICAgYy0zLjEyNC0zLjEyMy04LjE4OC0zLjEyMy0xMS4zMTIsMGwtMjQsMjRjLTMuMTIzLDMuMTI0LTMuMTIzLDguMTg4LDAsMTEuMzEybDE5LjMxMiwxOS4zMTJjMS41MDIsMS41MDIsMi4zNDYsMy41NCwyLjM0NCw1LjY2NCAgICAgVjQ1NmMwLDQuNDE4LTMuNTgyLDgtOCw4cy04LTMuNTgyLTgtOHYtNjRjMC0yLjEyMi0wLjg0NC00LjE1Ni0yLjM0NC01LjY1NmwtMzUuMzEyLTM1LjMxMmMtMS41MDItMS41MDItMi4zNDYtMy41NC0yLjM0NC01LjY2NCAgICAgVjMyMGgxNmMxMy4yNTUsMCwyNC0xMC43NDUsMjQtMjRzLTEwLjc0NS0yNC0yNC0yNEg0OHYtMjRIMzJ2MzJjMCw0LjQxOCwzLjU4Miw4LDgsOGgyNGM0LjQxOCwwLDgsMy41ODIsOCw4cy0zLjU4Miw4LTgsOEgyNCAgICAgYy00LjQxOCwwLTgtMy41ODItOC04di01NmMwLTQuNDE4LDMuNTgyLTgsOC04di0xNmMtMTMuMjU1LDAtMjQsMTAuNzQ1LTI0LDI0djU2YzAsMTMuMjU1LDEwLjc0NSwyNCwyNCwyNGg4djI1LjM2OCAgICAgYy0wLjAxNiw2LjM3LDIuNTE2LDEyLjQ4Myw3LjAzMiwxNi45NzZMNzIsMzk1LjMxMlY0NTZjMCwxMy4yNTUsMTAuNzQ1LDI0LDI0LDI0czI0LTEwLjc0NSwyNC0yNHYtNzMuMzY4ICAgICBjMC4wMi02LjM3MS0yLjUxMi0xMi40ODUtNy4wMzItMTYuOTc2TDk5LjMxMiwzNTJMMTEyLDMzOS4zMTJsMjQsMjRWNDI0YzAsMTMuMjU1LDEwLjc0NSwyNCwyNCwyNHMyNC0xMC43NDUsMjQtMjR2LTczLjM2OCAgICAgYzAuMDItNi4zNzEtMi41MTItMTIuNDg1LTcuMDMyLTE2Ljk3NkwxMzYsMjkyLjY4OFYyNjRoNTZjMTMuMjU1LDAsMjQtMTAuNzQ1LDI0LTI0di01NkMyMTYsMTcwLjc0NSwyMDUuMjU1LDE2MCwxOTIsMTYweiIgZmlsbD0iI0ZGRkZGRiIvPgoJCQk8cGF0aCBkPSJNMzY4LDk2YzI2LjUxLDAsNDgtMjEuNDksNDgtNDhTMzk0LjUxLDAsMzY4LDBjLTI2LjUxLDAtNDgsMjEuNDktNDgsNDhDMzIwLjAyNiw3NC40OTksMzQxLjUwMSw5NS45NzQsMzY4LDk2eiBNMzY4LDE2ICAgICBjMTcuNjczLDAsMzIsMTQuMzI3LDMyLDMycy0xNC4zMjcsMzItMzIsMzJjLTE3LjY3MywwLTMyLTE0LjMyNy0zMi0zMlMzNTAuMzI3LDE2LDM2OCwxNnoiIGZpbGw9IiNGRkZGRkYiLz4KCQkJPHBhdGggZD0iTTQ1Niw4MGgtNDh2MTZoNDhjNC40MTgsMCw4LDMuNTgyLDgsOHY0OGMwLDQuNDE4LTMuNTgyLDgtOCw4cy04LTMuNTgyLTgtOHYtMzJjMC00LjQxOC0zLjU4Mi04LTgtOGgtMzIgICAgIGMtNC40MTgsMC04LDMuNTgyLTgsOHY4OS4zNjhjMC4wMDIsMi4xMjQtMC44NDIsNC4xNjItMi4zNDQsNS42NjRsLTI3LjMxMiwyNy4zMTJjLTMuMTIzLDMuMTI0LTMuMTIzLDguMTg4LDAsMTEuMzEyICAgICBsMzYuNjg4LDM2LjY4OGMzLjEyMywzLjEyNCwzLjEyMyw4LjE4OCwwLDExLjMxMmwtMS4zNzYsMS4zNjhjLTMuMTI0LDMuMTIzLTguMTg4LDMuMTIzLTExLjMxMiwwbC00OS4zNzYtNDkuMzc2ICAgICBjLTMuMTIzLTMuMTI0LTMuMTIzLTguMTg4LDAtMTEuMzEybDIwLjY4OC0yMC42ODhjMy4xMjMtMy4xMjQsMy4xMjMtOC4xODgsMC0xMS4zMTJsLTI0LTI0Yy0zLjEyNC0zLjEyMy04LjE4OC0zLjEyMy0xMS4zMTIsMCAgICAgbC0zMiwzMmMtMS41MDIsMS41MDItMi4zNDYsMy41NC0yLjM0NCw1LjY2NHY2NGMwLDQuNDE4LTMuNTgyLDgtOCw4cy04LTMuNTgyLTgtOHYtNzMuMzY4Yy0wLjAwMi0yLjEyNCwwLjg0Mi00LjE2MiwyLjM0NC01LjY2NCAgICAgbDQzLjMxMi00My4zMTJjMS41LTEuNSwyLjM0NC0zLjUzNCwyLjM0NC01LjY1NnYtNDBjMC00LjQxOC0zLjU4Mi04LTgtOGgtNDhjLTQuNDE4LDAtOC0zLjU4Mi04LThWNDhjMC00LjQxOCwzLjU4Mi04LDgtOCAgICAgczgsMy41ODIsOCw4djQwYzAsNC40MTgsMy41ODIsOCw4LDhoMzJWODBoLTI0VjQ4YzAtMTMuMjU1LTEwLjc0NS0yNC0yNC0yNHMtMjQsMTAuNzQ1LTI0LDI0djU2YzAsMTMuMjU1LDEwLjc0NSwyNCwyNCwyNGg0MCAgICAgdjI4LjY4OGwtNDAuOTY4LDQwLjk2OGMtNC41MTYsNC40OTMtNy4wNDgsMTAuNjA2LTcuMDMyLDE2Ljk3NlYyODhjMCwxMy4yNTUsMTAuNzQ1LDI0LDI0LDI0czI0LTEwLjc0NSwyNC0yNHYtNjAuNjg4bDI0LTI0ICAgICBMMzQ4LjY4OCwyMTZsLTE1LjAzMiwxNS4wMjRjLTkuMzczLDkuMzcyLTkuMzc1LDI0LjU2OC0wLjAwMywzMy45NDFjMC4wMDEsMC4wMDEsMC4wMDIsMC4wMDIsMC4wMDMsMC4wMDNsNDkuMzc2LDQ5LjM3NiAgICAgYzkuMzcyLDkuMzY5LDI0LjU2NCw5LjM2OSwzMy45MzYsMGwxLjM3Ni0xLjM2OGM5LjM3My05LjM3Miw5LjM3NS0yNC41NjgsMC4wMDMtMzMuOTQxYy0wLjAwMS0wLjAwMS0wLjAwMi0wLjAwMi0wLjAwMy0wLjAwMyAgICAgTDM4Ny4zMTIsMjQ4bDIxLjY1Ni0yMS42NTZjNC41Mi00LjQ5MSw3LjA1Mi0xMC42MDUsNy4wMzItMTYuOTc2VjEyOGgxNnYyNGMwLDEzLjI1NSwxMC43NDUsMjQsMjQsMjRzMjQtMTAuNzQ1LDI0LTI0di00OCAgICAgQzQ4MCw5MC43NDUsNDY5LjI1NSw4MCw0NTYsODB6IiBmaWxsPSIjRkZGRkZGIi8+CgkJCTxyZWN0IHg9IjM2MCIgeT0iNDAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyNCIgZmlsbD0iI0ZGRkZGRiIvPgoJCQk8cGF0aCBkPSJNMTA0LDE5MnYtMjRIODh2MTZINzJ2MTZoMjRDMTAwLjQxOCwyMDAsMTA0LDE5Ni40MTgsMTA0LDE5MnoiIGZpbGw9IiNGRkZGRkYiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="
+                      height="40" />
+                    <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9Ii0zIDAgNDg3IDQ4Ny43ODc2MyIgd2lkdGg9IjE2cHgiPjxwYXRoIGQ9Im00ODAuMzk4NDM4IDM0My43ODkwNjJ2LTcyYy0uMDIzNDM4LTIyLjA4MjAzMS0xNy45MTc5NjktMzkuOTc2NTYyLTQwLTQwaC0zMnYtODBjMC00LjQxNzk2OC0zLjU4MjAzMi04LTgtOGgtNDhjLTQuNDE3OTY5IDAtOCAzLjU4MjAzMi04IDh2ODBoLTcydi05NmMwLTQuNDE3OTY4LTMuNTgyMDMyLTgtOC04aC00OGMtNC40MTc5NjkgMC04IDMuNTgyMDMyLTggOHY5NmgtNzJ2LTgwYzAtNC40MTc5NjgtMy41ODIwMzItOC04LThoLTQ4Yy00LjQxNzk2OSAwLTggMy41ODIwMzItOCA4djgwaC0zMmMtMjIuMDc4MTI2LjAyMzQzOC0zOS45NzI2NTcgMTcuOTE3OTY5LTQwIDQwdjcyYy0uMjczNDM4IDE3LjE2Nzk2OSA4Ljk2MDkzNyAzMy4wODU5MzggMjQgNDEuMzc1djg2LjYyNWgtMTZjLTQuNDE3OTY5IDAtOCAzLjU4MjAzMi04IDggMCA0LjQxNzk2OSAzLjU4MjAzMSA4IDggOGg0NjRjNC40MTc5NjggMCA4LTMuNTgyMDMxIDgtOCAwLTQuNDE3OTY4LTMuNTgyMDMyLTgtOC04aC0xNnYtODYuNTAzOTA2YzE0LjgwODU5My04LjU4NTkzNyAyMy45NDUzMTItMjQuMzgyODEyIDI0LTQxLjQ5NjA5NHptLTEyMC0xODRoMzJ2NzJoLTMyem0tMTM2LTE2aDMydjg4aC0zMnptLTEzNiAxNmgzMnY3MmgtMzJ6bS03MiAxMTJjMC0xMy4yNTc4MTIgMTAuNzQ2MDkzLTI0IDI0LTI0aDQwMGMxMy4yNTc4MTIgMCAyNCAxMC43NDIxODggMjQgMjR2NzJjLS4wMjczNDQgMTIuNzA3MDMyLTcuNTI3MzQ0IDI0LjIwNzAzMi0xOS4xNDQ1MzIgMjkuMzU5Mzc2LTEyLjA5Mzc1IDUuMDkzNzUtMjYuMDYyNSAyLjQ3MjY1Ni0zNS40ODQzNzUtNi42NjQwNjMtNi4wMDc4MTItNi4wMjczNDQtOS4zNzUtMTQuMTkxNDA2LTkuMzcxMDkzLTIyLjY5NTMxM3YtMzJjLS4wMzkwNjMtMTIuMDgyMDMxLTYuODk0NTMyLTIzLjEwMTU2Mi0xNy43MTA5MzgtMjguNDgwNDY4bC0uNDg4MjgxLS4yNjU2MjVjLTEuMjgxMjUtLjYwNTQ2OS0yLjYwMTU2My0xLjEyMTA5NC0zLjk1MzEyNS0xLjU0Mjk2OS0uNzk2ODc1LS4yNjU2MjUtMS41MjczNDQtLjUyNzM0NC0yLjMyMDMxMy0uNzE4NzUtMS4wMjM0MzctLjIzNDM3NS0yLjA1ODU5My0uNDE3OTY5LTMuMTAxNTYyLS41NDY4NzUtLjcwMzEyNS0uMTAxNTYzLTEuMzc1LS4zMTI1LTIuMDg5ODQ0LS4zNjcxODctLjM4MjgxMyAwLS43NS4wNTQ2ODctMS4xMjUuMDM5MDYyLS4zNzg5MDYtLjAxNTYyNS0uNzkyOTY5LS4xMTcxODgtMS4yMTA5MzctLjExNzE4OC0uODg2NzE5IDAtMS43NDIxODguMTgzNTk0LTIuNjIxMDk0LjI1MzkwNy0uODgyODEzLjA3NDIxOS0xLjgxNjQwNi4xMTMyODEtMi43MTQ4NDQuMjY1NjI1LTEuMzgyODEyLjI1NzgxMi0yLjc1LjYwOTM3NS00LjA4NTkzOCAxLjA0Njg3NS0uNzIyNjU2LjIyMjY1Ni0xLjQ1NzAzMS4zODI4MTItMi4xNjAxNTYuNjU2MjUtMS40OTIxODcuNjA1NDY5LTIuOTMzNTk0IDEuMzI4MTI1LTQuMzEyNSAyLjE2MDE1Ni0uNTAzOTA2LjI4OTA2My0xLjAzOTA2Mi40OTYwOTQtMS41MzUxNTYuODAwNzgxLTEuODY3MTg4IDEuMjEwOTM4LTMuNjA1NDY5IDIuNjEzMjgyLTUuMTgzNTk0IDQuMTgzNTk0LTYuMDI3MzQ0IDUuOTg0Mzc1LTkuNDA2MjUgMTQuMTM2NzE5LTkuMzg2NzE4IDIyLjYzMjgxMnYxNmMwIDE3LjY3MTg3Ni0xNC4zMjQyMTkgMzItMzIgMzItMTcuNjcxODc2IDAtMzItMTQuMzI4MTI0LTMyLTMydi0xNmMtLjAzOTA2My0xMi4wODIwMzEtNi44OTQ1MzItMjMuMTAxNTYyLTE3LjcxMDkzOC0yOC40ODA0NjhsLS40ODgyODEtLjI2NTYyNWMtMS4yODEyNS0uNjA1NDY5LTIuNjAxNTYzLTEuMTIxMDk0LTMuOTUzMTI1LTEuNTQyOTY5LS43OTY4NzUtLjI2NTYyNS0xLjUyNzM0NC0uNTI3MzQ0LTIuMzIwMzEzLS43MTg3NS0xLjAyMzQzNy0uMjM0Mzc1LTIuMDU4NTkzLS40MTc5NjktMy4xMDE1NjItLjU0Njg3NS0uNzAzMTI1LS4xMDE1NjMtMS4zNzUtLjMxMjUtMi4wODk4NDQtLjM2NzE4Ny0uMzgyODEzIDAtLjc1LjA1NDY4Ny0xLjEyNS4wMzkwNjItLjM3ODkwNi0uMDE1NjI1LS43OTI5NjktLjExNzE4OC0xLjIxMDkzNy0uMTE3MTg4LS44ODY3MTkgMC0xLjc0MjE4OC4xODM1OTQtMi42MjEwOTQuMjUzOTA3LS44ODI4MTMuMDc0MjE5LTEuODE2NDA2LjExMzI4MS0yLjcxNDg0NC4yNjU2MjUtMS4zNzg5MDYuMjU3ODEyLTIuNzQyMTg4LjYwOTM3NS00LjA3ODEyNSAxLjA0Njg3NS0uNzMwNDY5LjIyMjY1Ni0xLjQ2NDg0NC4zODI4MTItMi4xNjc5NjkuNjU2MjUtMS40ODQzNzUuNjA1NDY5LTIuOTIxODc1IDEuMzI0MjE5LTQuMjk2ODc1IDIuMTUyMzQzLS41MTE3MTkuMjg5MDYzLTEuMDU0Njg3LjUwMzkwNy0xLjU1MDc4MS44MDA3ODItMS44NjcxODggMS4yMDcwMzEtMy42MDU0NjkgMi42MDU0NjgtNS4xODM1OTQgNC4xNzU3ODEtNi4wMzEyNSA1Ljk4ODI4MS05LjQxMDE1NiAxNC4xNDg0MzctOS4zODY3MTggMjIuNjQ4NDM3djQ4YzAgMTcuNjcxODc2LTE0LjMyNDIxOSAzMi0zMiAzMi0xNy42NzE4NzYgMC0zMi0xNC4zMjgxMjQtMzItMzJ2LTQ4Yy0uMDM5MDYzLTEyLjA4MjAzMS02Ljg5NDUzMi0yMy4xMDE1NjItMTcuNzEwOTM4LTI4LjQ4MDQ2OGwtLjQ4ODI4MS0uMjY1NjI1Yy0xLjI4MTI1LS42MDU0NjktMi42MDE1NjMtMS4xMjEwOTQtMy45NTMxMjUtMS41NDI5NjktLjc5Njg3NS0uMjY1NjI1LTEuNTI3MzQ0LS41MjczNDQtMi4zMjAzMTMtLjcxODc1LTEuMDIzNDM3LS4yMzQzNzUtMi4wNTg1OTMtLjQxNzk2OS0zLjEwMTU2Mi0uNTQ2ODc1LS43MDMxMjUtLjEwMTU2My0xLjM3NS0uMzEyNS0yLjA4OTg0NC0uMzY3MTg3LS43MTA5MzctLjA1NDY4OC0xLjUzNTE1Ni0uMDc4MTI2LTIuMzM1OTM3LS4wNzgxMjYtMTcuNjcxODc2IDAtMzIgMTQuMzI0MjE5LTMyIDMydjMyYy4wMTE3MTggOC40NzY1NjMtMy4zMzIwMzIgMTYuNjEzMjgyLTkuMzA0Njg4IDIyLjYyODkwNy03LjkyOTY4OCA3LjYzMjgxMi0xOS4xMzY3MTkgMTAuODEyNS0yOS44OTQ1MzEgOC40ODA0NjktMS45MTQwNjMtLjQwNjI1LTMuNzg5MDYzLS45ODQzNzYtNS41OTc2NTctMS43MzQzNzYtMy42NTYyNS0xLjYxMzI4MS02Ljk4ODI4MS0zLjg3NS05LjgzMjAzMS02LjY3OTY4Ny02LjAwNzgxMi02LjAyNzM0NC05LjM3NS0xNC4xOTE0MDYtOS4zNzEwOTMtMjIuNjk1MzEzem0yNCAyMDB2LTgwLjY2NDA2MmMuODAwNzgxLjEzMjgxMiAxLjYwMTU2Mi4xNjc5NjkgMi40MDIzNDMuMjYxNzE5bC42MTMyODEuMDY2NDA2YzcgLjcyMjY1NiAxNC4wNzQyMTktLjA5NzY1NiAyMC43MjI2NTctMi40MDIzNDQgMi4wMzEyNS0uNzE0ODQzIDQuMDE1NjI1LTEuNTY2NDA2IDUuOTMzNTkzLTIuNTQyOTY5LjQxMDE1Ny0uMTk5MjE4LjgwMDc4Mi0uNDE3OTY4IDEuMjI2NTYzLS42NDA2MjQgMS41NTA3ODEtLjg0Mzc1IDMuMDU4NTk0LTEuNzY5NTMyIDQuNTExNzE5LTIuNzc3MzQ0LjQ2NDg0NC0uMzE2NDA2LjkzMzU5NC0uNjEzMjgyIDEuMzkwNjI1LS45NDkyMTkgMTIuMjQ2MDkzLTguOTEwMTU2IDE5LjQwMjM0My0yMy4yMTA5MzcgMTkuMTk5MjE5LTM4LjM1MTU2M3YtMzJjLS4wMDc4MTMtNC4yNDYwOTMgMS42ODM1OTMtOC4zMTY0MDYgNC42OTUzMTItMTEuMzA0Njg3LjgwMDc4MS0uNzkyOTY5IDEuNjc5Njg4LTEuNTAzOTA2IDIuNjI1LTIuMTEzMjgxLjE2Nzk2OS0uMTAxNTYzLjM1MTU2Mi0uMTc1NzgyLjUxOTUzMS0uMjY5NTMyLjc4NTE1Ny0uNDgwNDY4IDEuNjA1NDY5LS44OTA2MjQgMi40NTcwMzEtMS4yMjY1NjIuMjUtLjA5Mzc1LjUwMzkwNy0uMTUyMzQ0Ljc1MzkwNy0uMjMwNDY5Ljc4MTI1LS4yNjU2MjUgMS41ODIwMzEtLjQ2NDg0MyAyLjM5ODQzNy0uNjAxNTYyLjM4MjgxMy0uMDYyNS44MDA3ODItLjA3ODEyNSAxLjE3NTc4Mi0uMTIxMDk0LjY3MTg3NC0uMDYyNSAxLjM0NzY1Ni0uMDg1OTM3IDIuMDIzNDM3LS4wNzAzMTMuNTAzOTA2LjAyMzQzOCAxLjAwNzgxMy4wNzQyMTkgMS41MDM5MDYuMTUyMzQ0LjYwMTU2My4wNzAzMTMgMS4xOTkyMTkuMTc5Njg4IDEuNzg1MTU3LjMyODEyNS4xOTkyMTguMDQ2ODc1LjM4MjgxMi4xMjEwOTQuNTc0MjE4LjE3NTc4MSA2Ljk3MjY1NiAyLjU0Mjk2OSAxMS41NzgxMjUgOS4yMTA5MzggMTEuNDg4MjgyIDE2LjYzMjgxM3Y0Ni42NDg0MzdjMCAyNi41MDc4MTMgMjEuNDkyMTg3IDQ4IDQ4IDQ4IDI2LjUxMTcxOCAwIDQ4LTIxLjQ5MjE4NyA0OC00OHYtNDhjMC01LjQzMzU5MyAyLjc2NTYyNC0xMC40OTIxODcgNy4zMzU5MzctMTMuNDI1NzgxLjEzNjcxOS0uMDg1OTM3LjI5Njg3NS0uMTQ0NTMxLjQzMzU5NC0uMjMwNDY5LjgxMjUtLjQ5NjA5MyAxLjY2NDA2Mi0uOTIxODc0IDIuNTUwNzgxLTEuMjY1NjI0LjIyNjU2Mi0uMDg1OTM4LjQ1NzAzMS0uMTM2NzE5LjY3OTY4OC0uMjA3MDMyLjc4NTE1Ni0uMjY1NjI1IDEuNTg1OTM3LS40NzY1NjIgMi40MDIzNDMtLjYyNS4zODI4MTMtLjA1NDY4Ny44MDA3ODEtLjA3ODEyNSAxLjE1MjM0NC0uMTEzMjgxLjY3MTg3NS0uMDY2NDA2IDEuMzUxNTYzLS4wODk4NDQgMi4wMzEyNS0uMDcwMzEzLjUwMzkwNi4wMjM0MzggMS4wMDM5MDYuMDc0MjE5IDEuNTAzOTA2LjE1MjM0NC42MDE1NjMuMDcwMzEzIDEuMTk1MzEzLjE3OTY4OCAxLjc4NTE1Ny4zMjgxMjUuMTk5MjE4LjA0Njg3NS4zODI4MTIuMTIxMDk0LjU3NDIxOC4xNzU3ODEgNi45OTYwOTQgMi41MjM0MzggMTEuNjMyODEzIDkuMTk1MzEzIDExLjU1MDc4MiAxNi42MzI4MTN2MTQuNjQ4NDM3YzAgMjYuNTA3ODEzIDIxLjQ5MjE4NyA0OCA0OCA0OCAyNi41MTE3MTggMCA0OC0yMS40OTIxODcgNDgtNDh2LTE2Yy0uMDA3ODEzLTQuMjQ2MDkzIDEuNjgzNTkzLTguMzE2NDA2IDQuNjk1MzEyLTExLjMwNDY4Ny44MDA3ODEtLjc5Mjk2OSAxLjY3OTY4OC0xLjUwMzkwNiAyLjYyNS0yLjExMzI4MS4xNjc5NjktLjEwMTU2My4zNTE1NjItLjE3NTc4Mi41MjczNDQtLjI4MTI1Ljc4MTI1LS40NzI2NTYgMS42MDE1NjItLjg3ODkwNiAyLjQ0OTIxOC0xLjIxNDg0NC4yNS0uMDkzNzUuNTExNzE5LS4xNTIzNDQuODAwNzgyLS4yMzA0NjkuNzY5NTMxLS4yNjU2MjUgMS41NTg1OTQtLjQ2NDg0MyAyLjM1OTM3NS0uNjAxNTYyLjM4MjgxMi0uMDYyNS44MDA3ODEtLjA3ODEyNSAxLjE3NTc4MS0uMTIxMDk0LjY3MTg3NS0uMDYyNSAxLjM0NzY1Ni0uMDg1OTM3IDIuMDIzNDM4LS4wNzAzMTMuNTAzOTA2LjAyMzQzOCAxLjAwNzgxMi4wNzQyMTkgMS41MDM5MDYuMTUyMzQ0LjYwMTU2Mi4wNzAzMTMgMS4xOTkyMTguMTc5Njg4IDEuNzg1MTU2LjMyODEyNS4xOTkyMTkuMDQ2ODc1LjM4MjgxMi4xMjEwOTQuNTc0MjE5LjE3NTc4MSA2Ljk2ODc1IDIuNTQ2ODc2IDExLjU3NDIxOSA5LjIxNDg0NCAxMS40ODA0NjkgMTYuNjMyODEzdjMwLjY0ODQzN2MtLjAxMTcxOSAxMi43NSA1LjA0Mjk2OCAyNC45ODQzNzYgMTQuMDU4NTkzIDM0LjAwNzgxMyAxLjU4NTkzOCAxLjU0Njg3NSAzLjI3NzM0NCAyLjk4NDM3NSA1LjA2MjUgNC4zMDQ2ODcuNTE5NTMxLjM3NSAxLjA1NDY4OC43MTA5MzggMS42MDE1NjMgMS4wNzAzMTMgMS4zNDM3NS45MTc5NjkgMi43MDMxMjUgMS43Njk1MzEgNC4xMTcxODcgMi41NDI5NjkuNTYyNS4zMDQ2ODcgMS4xMjEwOTQuNjAxNTYyIDEuNjg3NS44Nzg5MDYgMS42MTMyODEuODAwNzgxIDMuMjY1NjI1IDEuNTExNzE5IDQuOTUzMTI1IDIuMTI4OTA2LjMzNTkzOC4xMjEwOTQuNjY0MDYzLjI3MzQzOCAxLjAwNzgxMy4zODY3MTkgNC4zOTA2MjUgMS40OTYwOTQgOC45Njg3NSAyLjM1OTM3NSAxMy42MDE1NjIgMi41NTg1OTRoLjA1NDY4OGMyLjIzMDQ2OS4wODk4NDMgNC40NjQ4NDMuMDIzNDM3IDYuNjg3NS0uMTk5MjE5bC44MDA3ODEtLjA4OTg0NGMuODAwNzgxLS4wODU5MzcgMS42MDE1NjItLjEyMTA5NCAyLjQwMjM0NC0uMjUzOTA2djgwLjY2NDA2MnptMCAwIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0ibTI0MC4zOTg0MzggMTExLjc4OTA2MmMyMi4wODIwMzEtLjAyNzM0MyAzOS45NzY1NjItMTcuOTIxODc0IDQwLTQwIDAtMTkuMjAzMTI0LTI3LjgzMjAzMi02MC40NzI2NTYtMzMuNDE0MDYzLTY4LjU0Njg3NC0xLjU3NDIxOS0yLjA0Mjk2OS00LjAwMzkwNi0zLjI0MjE4OC02LjU4NTkzNy0zLjI0MjE4OC0yLjU3ODEyNiAwLTUuMDExNzE5IDEuMTk5MjE5LTYuNTgyMDMyIDMuMjQyMTg4LTUuNTg1OTM3IDguMDc0MjE4LTMzLjQxNzk2OCA0OS4zNDM3NS0zMy40MTc5NjggNjguNTQ2ODc0LjAyNzM0MyAyMi4wNzgxMjYgMTcuOTIxODc0IDM5Ljk3MjY1NyA0MCA0MHptMC04OS41MzkwNjJjMTEuNTExNzE4IDE3Ljk5MjE4OCAyNCA0MC44MDA3ODEgMjQgNDkuNTM5MDYyIDAgMTMuMjUzOTA3LTEwLjc0MjE4OCAyNC0yNCAyNC0xMy4yNTM5MDcgMC0yNC0xMC43NDYwOTMtMjQtMjQgMC04LjczODI4MSAxMi40ODgyODEtMzEuNTQ2ODc0IDI0LTQ5LjUzOTA2MnptMCAwIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0ibTM3Ni4zOTg0MzggMTI3Ljc4OTA2MmMyMi4wODIwMzEtLjAyNzM0MyAzOS45NzY1NjItMTcuOTIxODc0IDQwLTQwIDAtMTkuMjAzMTI0LTI3LjgzMjAzMi02MC40NzI2NTYtMzMuNDE0MDYzLTY4LjU0Njg3NC0xLjU3NDIxOS0yLjA0Mjk2OS00LjAwMzkwNi0zLjI0MjE4OC02LjU4NTkzNy0zLjI0MjE4OC0yLjU3ODEyNiAwLTUuMDExNzE5IDEuMTk5MjE5LTYuNTgyMDMyIDMuMjQyMTg4LTUuNTg1OTM3IDguMDc0MjE4LTMzLjQxNzk2OCA0OS4zNDM3NS0zMy40MTc5NjggNjguNTQ2ODc0LjAyNzM0MyAyMi4wNzgxMjYgMTcuOTIxODc0IDM5Ljk3MjY1NyA0MCA0MHptMC04OS41MzkwNjJjMTEuNTExNzE4IDE3Ljk5MjE4OCAyNCA0MC44MDA3ODEgMjQgNDkuNTM5MDYyIDAgMTMuMjUzOTA3LTEwLjc0MjE4OCAyNC0yNCAyNC0xMy4yNTM5MDcgMC0yNC0xMC43NDYwOTMtMjQtMjQgMC04LjczODI4MSAxMi40ODgyODEtMzEuNTQ2ODc0IDI0LTQ5LjUzOTA2MnptMCAwIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0ibTEwNC4zOTg0MzggMTI3Ljc4OTA2MmMyMi4wODIwMzEtLjAyNzM0MyAzOS45NzY1NjItMTcuOTIxODc0IDQwLTQwIDAtMTkuMjAzMTI0LTI3LjgzMjAzMi02MC40NzI2NTYtMzMuNDE0MDYzLTY4LjU0Njg3NC0xLjU3NDIxOS0yLjA0Mjk2OS00LjAwMzkwNi0zLjI0MjE4OC02LjU4NTkzNy0zLjI0MjE4OC0yLjU3ODEyNiAwLTUuMDExNzE5IDEuMTk5MjE5LTYuNTgyMDMyIDMuMjQyMTg4LTUuNTg1OTM3IDguMDc0MjE4LTMzLjQxNzk2OCA0OS4zNDM3NS0zMy40MTc5NjggNjguNTQ2ODc0LjAyNzM0MyAyMi4wNzgxMjYgMTcuOTIxODc0IDM5Ljk3MjY1NyA0MCA0MHptMC04OS41MzkwNjJjMTEuNTExNzE4IDE3Ljk5MjE4OCAyNCA0MC44MDA3ODEgMjQgNDkuNTM5MDYyIDAgMTMuMjUzOTA3LTEwLjc0MjE4OCAyNC0yNCAyNC0xMy4yNTM5MDcgMC0yNC0xMC43NDYwOTMtMjQtMjQgMC04LjczODI4MSAxMi40ODgyODEtMzEuNTQ2ODc0IDI0LTQ5LjUzOTA2MnptMCAwIiBmaWxsPSIjRkZGRkZGIi8+PC9zdmc+Cg=="
+                      alt=""
+                      height="40" />
+                    <p className="mt-1 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut mauris eros. Nulla quis ante sed tortor efficitur facilisis.</p>
+                    <a href="#" title="Facebook" uk-icon="facebook" class="uk-icon ml-2"><svg fill="#fff" stroke="#fff" stroke-width="1.01" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"></path></svg></a>
+                    <a href="#" title="Twitter" uk-icon="twitter" class="uk-icon ml-2"><svg fill="#fff" stroke="#fff" stroke-width="1.01" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M19,4.74 C18.339,5.029 17.626,5.229 16.881,5.32 C17.644,4.86 18.227,4.139 18.503,3.28 C17.79,3.7 17.001,4.009 16.159,4.17 C15.485,3.45 14.526,3 13.464,3 C11.423,3 9.771,4.66 9.771,6.7 C9.771,6.99 9.804,7.269 9.868,7.539 C6.795,7.38 4.076,5.919 2.254,3.679 C1.936,4.219 1.754,4.86 1.754,5.539 C1.754,6.82 2.405,7.95 3.397,8.61 C2.79,8.589 2.22,8.429 1.723,8.149 L1.723,8.189 C1.723,9.978 2.997,11.478 4.686,11.82 C4.376,11.899 4.049,11.939 3.713,11.939 C3.475,11.939 3.245,11.919 3.018,11.88 C3.49,13.349 4.852,14.419 6.469,14.449 C5.205,15.429 3.612,16.019 1.882,16.019 C1.583,16.019 1.29,16.009 1,15.969 C2.635,17.019 4.576,17.629 6.662,17.629 C13.454,17.629 17.17,12 17.17,7.129 C17.17,6.969 17.166,6.809 17.157,6.649 C17.879,6.129 18.504,5.478 19,4.74"></path></svg></a>
+                    <a href="#" title="YouTube" uk-icon="youtube" class="uk-icon ml-2"><svg fill="#fff" stroke="#fff" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M15,4.1c1,0.1,2.3,0,3,0.8c0.8,0.8,0.9,2.1,0.9,3.1C19,9.2,19,10.9,19,12c-0.1,1.1,0,2.4-0.5,3.4c-0.5,1.1-1.4,1.5-2.5,1.6 c-1.2,0.1-8.6,0.1-11,0c-1.1-0.1-2.4-0.1-3.2-1c-0.7-0.8-0.7-2-0.8-3C1,11.8,1,10.1,1,8.9c0-1.1,0-2.4,0.5-3.4C2,4.5,3,4.3,4.1,4.2 C5.3,4.1,12.6,4,15,4.1z M8,7.5v6l5.5-3L8,7.5z"></path></svg></a>
+                    <a href="#" title="Instagram" uk-icon="instagram" class="uk-icon ml-2"><svg fill="#fff" stroke="#fff" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z"></path> <circle cx="14.87" cy="5.26" r="1.09"></circle> <path d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z"></path></svg></a>
+                  </Col>
+                  <Col md="2" sm="4" xs="6">
+                    <p>Catalog</p>
+                    <p>Brands</p>
+                    <p>Delivery</p>
+                    <p>FAQ</p>
+                    <p>Payment</p>
+                  </Col>
+                  <Col md="2" sm="4" xs="6">
+                    <p>About</p>
+                    <p>Contacts</p>
+                    <p>Blog</p>
+                    <p>New</p>
+                  </Col>
+                  <Col md="4" sm="4" xs="6">
+                    <Row><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#fff" stroke-width="1.01" d="M6.189,13.611C8.134,15.525 11.097,18.239 13.867,18.257C16.47,18.275 18.2,16.241 18.2,16.241L14.509,12.551L11.539,13.639L6.189,8.29L7.313,5.355L3.76,1.8C3.76,1.8 1.732,3.537 1.7,6.092C1.667,8.809 4.347,11.738 6.189,13.611"></path></svg>
+                      <p className="ml-4">094 998 0848</p>
+                    </Row>
+                    <Row><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" points="1.4,6.5 10,11 18.6,6.5"></polyline> <path stroke="#fff" d="M 1,4 1,16 19,16 19,4 1,4 Z M 18,15 2,15 2,5 18,5 18,15 Z"></path></svg>
+                      <p className="ml-4">Sweetie@gmail.com</p>
+                    </Row>
+                    <Row><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#fff" stroke-width="1.01" d="M10,0.5 C6.41,0.5 3.5,3.39 3.5,6.98 C3.5,11.83 10,19 10,19 C10,19 16.5,11.83 16.5,6.98 C16.5,3.39 13.59,0.5 10,0.5 L10,0.5 Z"></path> <circle fill="none" stroke="#fff" cx="10" cy="6.8" r="2.3"></circle></svg>
+                      <p className="ml-4">St. Petersburg, Nevsky Prospect 28</p>
+                    </Row>
+                    <Row><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <circle fill="none" stroke="#fff" stroke-width="1.1" cx="10" cy="10" r="9"></circle> <rect stroke="#fff" x="9" y="4" width="1" height="7"></rect> <path fill="none" stroke="#fff" stroke-width="1.1" d="M13.018,14.197 L9.445,10.625"></path></svg>
+                      <p className="ml-4">Daily 10:00–22:00</p>
+                    </Row>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+
           </Footer>
 
           <Row>
-          <Modal
-            isOpen={this.state.modal8}
-            toggle={() => this.toggle(8)}
-            fullHeight
-            position="right"
-          >
-            <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
-            <ModalBody>
-              <CardGroup className="ml-2 mr-2">
-                <Row>
-                  <Card className="mb-1">
-                    <CardBody>
-                      <Row>
-                        <Col xs="4">
-                          <CardImage
-                            src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                            alt="Card image cap" top hover overlay="white-slight" />
-                        </Col>
-                        <Col xs="7">
-                          <CardText small muted >
-                            <strong>Chocolate Title</strong><br />
-                            Order this delicious Fresh Chocolate
-                            <Row>
-                              <Col xs="5"><p>$1599.00</p></Col>
-                              <Col xs="7"><p>1 × $1599.00</p></Col>
-                            </Row>
-                          </CardText>
-                        </Col>
-                        <Col className="font-weight-bold red-text" xs="1">
-                          X
+            <Modal
+              isOpen={this.state.modal8}
+              toggle={() => this.toggle(8)}
+              fullHeight
+              position="right"
+            >
+              <ModalHeader toggle={() => this.toggle(8)}>Cart</ModalHeader>
+              <ModalBody>
+                <CardGroup className="ml-2 mr-2">
+                  <Row>
+                    <Card className="mb-1">
+                      <CardBody>
+                        <Row>
+                          <Col xs="4">
+                            <CardImage
+                              src="https://images.unsplash.com/photo-1517398823963-c2dc6fc3e837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              alt="Card image cap" top hover overlay="white-slight" />
                           </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                </Row>
-                <Row>
-                  <Card className="mt-1">
-                    <CardBody>
-                      <Row>
-                        <Col xs="4">
-                          <CardImage
-                            src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
-                            alt="Card image cap" top hover overlay="white-slight" />
-                        </Col>
-                        <Col xs="7">
-                          <CardText small muted >
-                            <strong>Chocolate Title</strong><br />
-                            Order this delicious Fresh Chocolate
+                          <Col xs="7">
+                            <CardText small muted >
+                              <strong>Chocolate Title</strong><br />
+                              Order this delicious Fresh Chocolate
                             <Row>
-                              <Col xs="5"><p>$1599.00</p></Col>
-                              <Col xs="7"><p>1 × $1599.00</p></Col>
-                            </Row>
-                          </CardText>
-                        </Col>
-                        <Col className="font-weight-bold red-text" xs="1">
-                          X
+                                <Col xs="5"><p>$1599.00</p></Col>
+                                <Col xs="7"><p>1 × $1599.00</p></Col>
+                              </Row>
+                            </CardText>
                           </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                </Row>
-              </CardGroup>
-            </ModalBody>
-            <ModalFooter>
-              <div>
-                <Row>
-                  <Col xs="1"></Col>
-                  <Col xs="5"><h5><strong>Subtotal</strong></h5></Col>
-                  <Col xs="5"><h5><strong>$3599.00</strong></h5></Col>
-                </Row>
-                <Button color="secondary" onClick={() => this.toggle(8)}>
-                  View CART
+                          <Col className="font-weight-bold red-text" xs="1">
+                            X
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </Row>
+                  <Row>
+                    <Card className="mt-1">
+                      <CardBody>
+                        <Row>
+                          <Col xs="4">
+                            <CardImage
+                              src="https://img.taste.com.au/uqaR-hn1/taste/2016/11/choc-chip-candy-cane-ice-cream-cake-110463-1.jpeg"
+                              alt="Card image cap" top hover overlay="white-slight" />
+                          </Col>
+                          <Col xs="7">
+                            <CardText small muted >
+                              <strong>Chocolate Title</strong><br />
+                              Order this delicious Fresh Chocolate
+                            <Row>
+                                <Col xs="5"><p>$1599.00</p></Col>
+                                <Col xs="7"><p>1 × $1599.00</p></Col>
+                              </Row>
+                            </CardText>
+                          </Col>
+                          <Col className="font-weight-bold red-text" xs="1">
+                            X
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </Row>
+                </CardGroup>
+              </ModalBody>
+              <ModalFooter>
+                <div>
+                  <Row>
+                    <Col xs="1"></Col>
+                    <Col xs="5"><h5><strong>Subtotal</strong></h5></Col>
+                    <Col xs="5"><h5><strong>$3599.00</strong></h5></Col>
+                  </Row>
+                  <Button color="secondary" onClick={() => this.toggle(8)}>
+                    View CART
                 </Button>
-                <Button color="primary">CHECKOUT</Button>
-              </div>
-            </ModalFooter>
-          </Modal>
-        </Row>
+                  <Button color="primary">CHECKOUT</Button>
+                </div>
+              </ModalFooter>
+            </Modal>
+          </Row>
 
         </div>
       </Router>
