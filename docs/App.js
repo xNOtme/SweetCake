@@ -110,7 +110,7 @@ class App extends Component {
                 <NavItem>
                   <NavLink
                     onClick={this.closeCollapse("mainNavbarCollapse")}
-                    to="/navigation"
+                    to="/productslist"
                   >
                     SAME DAY
                   </NavLink>
@@ -123,10 +123,10 @@ class App extends Component {
                       </div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">Rose</DropdownItem>
+                      <DropdownItem href="/productslist">White Gerberas</DropdownItem>
+                      <DropdownItem href="/productslist">Love Special</DropdownItem>
+                      <DropdownItem href="/productslist">Miss Sunshine</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>
@@ -138,10 +138,9 @@ class App extends Component {
                       </div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">Sweet Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Valentine Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Special Cake</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>
@@ -153,10 +152,10 @@ class App extends Component {
                       </div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">Gift Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Birthday Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Family Day</DropdownItem>
+                      <DropdownItem href="/productslist">Honey Cake</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>
@@ -168,10 +167,11 @@ class App extends Component {
                       </div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">ANNIVERSARY Cake</DropdownItem>
+                      <DropdownItem href="/productslist">ANNIVERSARY</DropdownItem>
+                      <DropdownItem href="/productslist">ANNIVERSARY Photo Cake</DropdownItem>
+                      <DropdownItem href="/productslist">ANNIVERSARY Flower</DropdownItem>
+                      <DropdownItem href="/productslist">ANNIVERSARY Special</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>
@@ -182,10 +182,9 @@ class App extends Component {
                         <span class="uk-margin-xsmall-left uk-icon" uk-icon="icon: chevron-down; ratio: .75;"><svg width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#fff" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg></span></div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">Plants Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Plants Photo</DropdownItem>
+                      <DropdownItem href="/productslist">Plants Gift</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>
@@ -197,10 +196,10 @@ class App extends Component {
                       </div>
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem href="#!">Action</DropdownItem>
-                      <DropdownItem href="#!">Another Action</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
-                      <DropdownItem href="#!">Something else here</DropdownItem>
+                      <DropdownItem href="/productslist">Birthday Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Birthday Plants Cake</DropdownItem>
+                      <DropdownItem href="/productslist">Birthday Dad</DropdownItem>
+                      <DropdownItem href="/productslist">Birthday Mom</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </NavItem>

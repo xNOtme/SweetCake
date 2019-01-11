@@ -51,6 +51,7 @@ import NavbarPage from "./pages/NavbarPage";
 import IframePage from "./pages/IframePage";
 import SignIn from "./pages/SignIn";
 import ProductPage from "./pages/ProductPage";
+import ProductsList from "./pages/ProductsList";
 // import CartPage from "./pages/CartPage";
 
 class Routes extends React.Component {
@@ -113,6 +114,7 @@ class Routes extends React.Component {
         <Route path="/addons/iframe" component={IframePage} />
         <Route path="/advanced/alerts" component={AlertPage} />
         <Route path="/productpage" component={ProductPage} />
+        <Route path="/productslist" component={ProductsList} />
         {/* <Route path="/productpage/cartpage" component={CartPage} /> */}
         <Route
           render={function() {
