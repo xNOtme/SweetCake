@@ -69,7 +69,9 @@ class ProductsList extends React.Component {
             <MDBContainer className="mt-5">
                 <MDBRow>
                     <div>
-                        <h2 className="text-center my-4 font-weight-bold">SAME DAY</h2>
+                        <h2 className="text-center my-4 font-weight-bold">Same Day</h2>                        
+                        <hr className="my-3" />
+                        
                         <CardGroup deck className="mt-3" >
                             <Card>
                                 <NavLink

@@ -24,8 +24,18 @@ a.border.nav-link.border-light.rounded.mr-1:hover {
 
 /* h2.fonta {
   font-family: Impact, Charcoal, sans-serif;
-}
+} */
 
 h2 {
-  font-family: Impact, sans-serif;
-} */
+  font-family: medinah, Roboto, Charcoal, sans-serif;
+  font-size: 40px;
+  color: #343a40;
+}
+
+
+@font-face {
+  font-family: 'Medinah';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./Medinah.ttf');
+}
