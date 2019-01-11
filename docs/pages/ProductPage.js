@@ -112,7 +112,13 @@ toggle(nr) {
           </MDBCol>
           <MDBCol md="1" />
           <MDBCol md="5">
-            <p className="h4 text-left mb-4">BELGIUM CHOCOLATE PHOTO CAKE</p>
+            <p className="h4 text-left mb-4">BELGIUM CHOCOLATE PHOTO CAKE</p>            
+            <i class="fa fa-star orange-text" aria-hidden="true"></i>
+            <i class="fa fa-star orange-text" aria-hidden="true"></i>
+            <i class="fa fa-star orange-text" aria-hidden="true"></i>
+            <i class="fa fa-star orange-text" aria-hidden="true"></i>
+            <i class="fa fa-star-o orange-text" aria-hidden="true"></i><br/>
+            
             <p className="h6 text-left mb-6">Price</p>
             <p className="h6 text-left text-warning mb-6">$1599.00</p>
             <p className="h6 text-left mb-6">Order this delicious Fresh Chocolate Photo Cake for someone special on any special occasion</p>

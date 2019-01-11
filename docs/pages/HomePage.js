@@ -270,7 +270,7 @@ class HomePage extends React.Component {
                           <Row>
                             <Col className="mt-2" xs="4">
                               <NavLink
-                                onClick={this.closeCollapse("mainNavbarCollapse")}
+                                onClick={() => this.toggle(8)}
                                 tag="button"
                                 to="/"
                               >
